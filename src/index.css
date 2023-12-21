@@ -36,3 +36,11 @@
     column-span: all;
   }
 }
+
+body {
+  overflow-x: hidden;
+}
+
+html[data-darkreader-scheme] {
+  filter: none !important;
+}
