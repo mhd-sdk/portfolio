@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { Navbar } from '@ui/Navbar/Navbar';
 import { Transition } from './Transition';
 
-export const AboutPage = () => {
+export const MyProjects = () => {
   const privacyRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
 
@@ -16,7 +16,7 @@ export const AboutPage = () => {
   return (
     <div>
       <Navbar onNavigate={handleNavigate} />
-      <Transition privacyRef={privacyRef} titleRef={titleRef} title={'About me'} />
+      <Transition privacyRef={privacyRef} titleRef={titleRef} title={'My projects'} />
     </div>
   )
 };

@@ -9,9 +9,9 @@ interface Props {
 export const Transition = ({ privacyRef, titleRef, title }: Props) => {
     useEffect(() => {
         const tl = gsap.timeline();
-        void tl.to(privacyRef.current, { x: '100vw', duration: 1, delay: 1.5, ease: 'power4.inOut' })
-            .to(privacyRef.current, { display: 'none' })
-            .to(privacyRef.current, { x: '-100vw', duration: 0, delay: 0 })
+        void tl.to(privacyRef.current, { x: '0vw', duration: 0, delay: 0, ease: 'power4.inOut' })
+            .to(privacyRef.current, { x: '100vw', duration: 1, delay: 1.5, ease: 'power4.inOut' })
+            .to(privacyRef.current, { x: '-100vw', duration: 0, delay: 0, ease: 'power4.inOut' })
     }, []);
 
     useEffect(() => {
@@ -27,8 +27,9 @@ export const Transition = ({ privacyRef, titleRef, title }: Props) => {
         background-color: #1c212b;
         height: 100%;
         width: 100%;
-        position: absolute;
-        z-index: 100;
+        position: fixed;
+        top: 0;
+        z-index: 200;
         
         `} />
         <h1 ref={titleRef} className={css`
@@ -37,7 +38,7 @@ export const Transition = ({ privacyRef, titleRef, title }: Props) => {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 200;
+        z-index: 300;
         display: none;
         `}>{title}</h1>
     </>

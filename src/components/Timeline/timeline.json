@@ -1,0 +1,8 @@
+[
+    {   "date": "2022-2025",
+        "title": "Internship full-stack engineer",
+        "company": "Fives Cortx",
+        "description": "Developing and maintening industry 4.0 software solutions",
+        "technologies": ["React", "typescript", "node.js","golang", "docker", "postgresql", "github"]
+    }
+]
