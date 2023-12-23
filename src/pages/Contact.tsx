@@ -7,6 +7,7 @@ import gsap from 'gsap';
 export const Contact = () => {
   const privacyRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const scrollDivRef = useRef(null);
 
   const handleNavigate = (to: string) => {
     gsap.to(privacyRef.current, { display: 'block', duration: 0, delay: 0 })
@@ -16,10 +17,9 @@ export const Contact = () => {
 
   return (
   <>
-    <div>
-      <Navbar onNavigate={handleNavigate} />
+      <div ref={scrollDivRef} >
+        <Navbar onNavigate={handleNavigate} />
         <h5>{'Contact'}</h5>
-
     </div>
       <Transition title="Contact" privacyRef={privacyRef} titleRef={titleRef} />
   </>

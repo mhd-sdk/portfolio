@@ -19,7 +19,7 @@ export const Transition = ({ privacyRef, titleRef, title }: Props) => {
         // make title fade in, then fade out, while moving from bottom to top
         void tl.to(titleRef.current, { opacity: 0, y: '-100px', duration: 0, ease: 'power4.inOut', delay: 0 })
             .to(titleRef.current, { opacity: 1, y: '-50px', duration: 1, ease: 'power4.inOut', display: 'block' })
-            .to(titleRef.current, { opacity: 0, y: '0px', duration: 1, ease: 'power4.inOut' })
+            .to(titleRef.current, { opacity: 0, y: '0px', duration: 1, ease: 'power4.inOut', display: 'none' })
     }, []);
 
     return (<>
@@ -34,7 +34,7 @@ export const Transition = ({ privacyRef, titleRef, title }: Props) => {
         `} />
         <h1 ref={titleRef} className={css`
         // center of the screen
-        position: absolute;
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
