@@ -1,6 +1,8 @@
 import gsap from 'gsap';
 import { css } from '@emotion/css';
 import { type RefObject, useEffect } from 'react';
+import { darkTheme, lightTheme } from '../dim-theme';
+import { useTheme } from '../hooks/useTheme';
 interface Props {
     privacyRef: RefObject<HTMLDivElement>;
     titleRef: RefObject<HTMLHeadingElement>;
@@ -22,9 +24,12 @@ export const Transition = ({ privacyRef, titleRef, title }: Props) => {
             .to(titleRef.current, { opacity: 0, y: '0px', duration: 1, ease: 'power4.inOut', display: 'none' })
     }, []);
 
+    const { theme } = useTheme();
+    const isDark = theme === 'dim';
+
     return (<>
         <div ref={privacyRef} className={css`
-        background-color: #1c212b;
+        background-color: ${isDark ? darkTheme['base-100'] : lightTheme['base-300']};
         height: 100%;
         width: 100%;
         position: fixed;

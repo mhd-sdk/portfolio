@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { css } from '@emotion/css';
+import { css, cx } from '@emotion/css';
 import { navigateWithDelay } from './navigateWithDelay';
 import { Navbar } from '@ui/Navbar/Navbar';
 import { Transition } from './Transition';
@@ -7,6 +7,7 @@ import gsap from 'gsap';
 import image from '../../public/picture.png';
 import { Timeline } from '@ui/Timeline/Timeline';
 import SplitType from 'split-type';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 export const AboutMe = () => {
   const privacyRef = useRef<HTMLDivElement>(null);
@@ -24,20 +25,11 @@ export const AboutMe = () => {
   const textRevealRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    SplitType.create('#hi-im-mehdi');
-    SplitType.create('#job-desc');
+    SplitType.create('.animate-text-reveal');
 
-    gsap.from('#job-desc .char', {
+    gsap.from('.char', {
       y: 100,
-      stagger: 0.015,
-      delay: 1,
-      duration: 3,
-      ease: 'power4.inOut'
-    });
-
-    gsap.from('#hi-im-mehdi .char', {
-      y: 100,
-      stagger: 0.015,
+      stagger: 0.025,
       delay: 1,
       duration: 3,
       ease: 'power4.inOut'
@@ -46,45 +38,92 @@ export const AboutMe = () => {
     // void tl.to(textRevealRef, { x: '100px', duration: 1, ease: 'power4.inOut', delay: 5 })
   }, []);
 
+  useEffect(() => {
+    // const smoother = new ScrollSmoother({
+    //   wrapper: '#scrollable-wrapper',
+    //   content: '#scrollable-content'
+    // });
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to('#hi-im-mehdi-container', {
+      yPercent: 100,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#section',
+        scrub: true
+      }
+    });
+
+    gsap.to('#job-desc-container', {
+      yPercent: 50,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#section',
+        scrub: true
+      }
+    });
+  }, [])
+
   return (
     <>
-      <div>
+      <div id="scrollable-wrapper">
+        <div id="scrollable-content">
+
         <Navbar onNavigate={handleNavigate} />
 
-        <section className={styles.section1}>
+          <section id="section" className={styles.section1}>
           <div className={styles.headerLine}>
-            <h5 id="hi-im-mehdi" >{"Hi, i'm Mehdi."}</h5>
+              <h5 className="animate-text-reveal" >{"Hi, i'm Mehdi."}</h5>
           </div>
-          <div className={styles.headerLine}>
+            <div className={(styles.headerLine)}>
             <h1
               ref={textRevealRef}
-              id="job-desc"
-              className={'font-bold'}
-            >
+                className={cx('font-bold', 'animate-text-reveal')}
+              >
               A full stack developer
             </h1>
           </div>
         </section>
 
         <section className={styles.section2}>
-          <h2 className="font-bold">
+            <h2 id="i-like-complexity" className="font-bold">
+              I like working on complex projects involving challenges and
+              innovative features
+            </h2>
+            <div
+              className={css`
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+            padding: 50px 0px 0px 0px;
+            `}
+            >
+              <img src={image} alt="" className={styles.image} />
+              <div>
+                <Timeline />
+              </div>
+            </div>
+          </section>
+
+          <section className={styles.section2}>
+            <h2 id="i-like-complexity" className="font-bold">
             I like working on complex projects involving challenges and
             innovative features
           </h2>
           <div
             className={css`
-              display: flex;
-              flex-direction: row;
-              gap: 50px;
-              padding: 50px 0px 0px 0px;
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+            padding: 50px 0px 0px 0px;
             `}
-          >
+            >
             <img src={image} alt="" className={styles.image} />
             <div>
               <Timeline />
             </div>
           </div>
         </section>
+
         <section className={styles.section2}>
           <h2 className="font-bold">
             I use the latest technologies to build awesome products
@@ -93,20 +132,22 @@ export const AboutMe = () => {
             alt=""
             width="50px"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-          />
+            />
 
           <img
             alt=""
             width="50px"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-          />
+            />
         </section>
+
       </div>
       <Transition
         title="Mehdi Seddik"
         privacyRef={privacyRef}
         titleRef={titleRef}
-      />
+        />
+      </div>
     </>
   );
 };
