@@ -8,7 +8,7 @@ export const DevIcons: React.FC = () => {
         <div
             className={cx('marquee-scroll', styles.wrapper)}
         >
-            <Marquee speed={30}>
+            <Marquee autoFill speed={30}>
                 {icons.map((icon, index) => (
                     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
                     <img alt="" className={cx('devicon', css`width:30px; margin-right:50px;`)} key={index} src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}`} />
