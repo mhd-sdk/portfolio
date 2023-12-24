@@ -6,7 +6,7 @@ import Marquee from 'react-fast-marquee';
 export const DevIcons: React.FC = () => {
     return (
         <div
-            className={styles.wrapper}
+            className={cx('marquee-scroll', styles.wrapper)}
         >
             <Marquee speed={30}>
                 {icons.map((icon, index) => (

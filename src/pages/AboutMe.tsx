@@ -9,6 +9,7 @@ import SplitType from 'split-type';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Lenis from '@studio-freight/lenis';
 import { DevIcons } from '@ui/DevIcons/DevIcons';
+gsap.registerPlugin(ScrollTrigger);
 
 export const AboutMe = () => {
   const privacyRef = useRef<HTMLDivElement>(null);
@@ -24,11 +25,10 @@ export const AboutMe = () => {
     navigateWithDelay(to);
   };
   const textRevealRef = useRef<HTMLHeadingElement>(null);
-
+  // section 1 gsap
   useEffect(() => {
-    SplitType.create('.animate-text-reveal');
-
-    gsap.from('.char', {
+    SplitType.create('.animate-reveal-section-1', { charClass: 'char-section-1' });
+    gsap.from('.char-section-1', {
       y: 100,
       stagger: 0.025,
       delay: 1,
@@ -38,8 +38,15 @@ export const AboutMe = () => {
   }, []);
   // section 2 reveal on scroll
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from('#section-2-header-text .char', {
+    SplitType.create('.animate-reveal-section-2', { charClass: 'char-section-2' });
+    gsap.from('.char-section-2', {
+      y: 100,
+      stagger: 0.025,
+      delay: 1,
+      duration: 3,
+      ease: 'power4.inOut'
+    });
+    gsap.from('#section-2-header-text .char-section-2', {
       opacity: 0.2,
       stagger: 3,
       ease: 'power4.inOut',
@@ -74,9 +81,6 @@ export const AboutMe = () => {
     });
 
     const lenis = new Lenis();
-    lenis.on('scroll', (e: any) => {
-      console.log(e);
-    });
     function raf(time: any) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -84,47 +88,62 @@ export const AboutMe = () => {
     requestAnimationFrame(raf);
   }, []);
   // section 3 reveal
+  useEffect(() => {
+    SplitType.create('#im-in-love-w-react', { charClass: 'char-section-3' });
+    const reactTimeLine = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#section-3',
+        pin: true,
+        start: 'center center',
+        end: '+=100%',
+        scrub: 3,
+        markers: false
+      }
+    });
 
-  // useEffect(() => {
-  //   ScrollTrigger.create({
-  //     trigger: '.hold-1',
-  //     // animation: tl,
-  //     pin: true,
-  //    start: 'center center',
-  //    end: '+=1000',
+    // Ajouter les animations simultanément sans délai.
+    reactTimeLine.add(gsap.from('.char-section-3', {
+      y: 100,
+      stagger: 0.025,
+      duration: 1,
+      ease: 'power4.out'
+    }), 0);
 
-  //     scrub: 0, // I like the 1 sec delay, set to true for exact anime on scroll
-  //     markers: true
-  //   })
-  // }, []);
+    reactTimeLine.add(gsap.from('#react-icon', {
+      rotate: 360,
+      opacity: 0,
+      width: 0,
+      duration: 2,
+      marginRight: 0,
+      ease: 'power4.inOut'
+    }), 0);
+  }, []);
 
   return (
     <>
       <div id="scrollable-wrapper">
         <div id="scrollable-content">
           <Navbar onNavigate={handleNavigate} />
-
           <section id="section-1" className={styles.section1}>
-            <div className={styles.overflowHidden}>
-              <h5 className="animate-text-reveal">{"Hi, i'm Mehdi."}</h5>
+            <div id="hi-im-mehdi" className={styles.overflowHidden}>
+              <h5 className="animate-reveal-section-1">{"Hi, i'm Mehdi."}</h5>
             </div>
-            <div className={styles.overflowHidden}>
+            <div id="a-full-stack-developer" className={styles.overflowHidden}>
               <h1
                 ref={textRevealRef}
-                className={cx('font-bold', 'animate-text-reveal')}
+                className={cx('font-bold', 'animate-reveal-section-1')}
               >
                 A full stack developer
               </h1>
             </div>
             <DevIcons />
           </section>
-
           <section id="section-2" className={cx('hold-1', styles.section2)}>
             <div className={styles.section2HeroText}>
               <div className={styles.overflowHidden}>
                 <h2
                   id="section-2-header-text"
-                  className={cx('animate-text-reveal', 'font-bold')}
+                  className={cx('animate-reveal-section-2', 'font-bold')}
                 >
                   Code passionate
                 </h2>
@@ -133,15 +152,16 @@ export const AboutMe = () => {
 
                 <h2
                   id="section-2-header-text"
-                  className={cx('animate-text-reveal', 'font-bold')}
+                  className={cx('animate-reveal-section-2', 'font-bold')}
                 >
                   Eager learner
                 </h2>
+
               </div>
               <div className={styles.overflowHidden}>
                 <h2
                   id="section-2-header-text"
-                  className={cx('animate-text-reveal', 'font-bold')}
+                  className={cx('animate-reveal-section-2', 'font-bold')}
                 >
                   Hard worker
                 </h2>
@@ -156,17 +176,21 @@ export const AboutMe = () => {
           </section>
           <section id="section-3" className={styles.section3}>
             <div className={styles.techHeader}>
-              <img alt="" className={cx(css`width:500px;`)} src={'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'} />
-              <div className={styles.techWrapper}>
-
-                <h2 className="font-bold">
-                  {"I'm in love with"} <br /> {'React'}
+              <img alt="" id="react-icon" className={cx(css`width:500px; z-index:500; margin-right:50px;`)} src={'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'} />
+              <div className={styles.overflowHidden}>
+                <h2 id="im-in-love-w-react" className="font-bold">
+                  {"I'm in love with React"}
                 </h2>
               </div>
             </div>
           </section>
-          <section>
-            But i can also code with...
+          <section id="section-4">
+            <h1 className='font-bold'>
+              But i can also code with...
+            </h1>
+            <div>
+
+            </div>
           </section>
 
           {/* <section className={styles.section3}>
@@ -243,6 +267,7 @@ const styles = {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   `,
   heroContent: css`
     display: flex;

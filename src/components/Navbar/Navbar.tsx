@@ -2,6 +2,7 @@ import { css, cx } from '@emotion/css';
 import { darkTheme, hexToRgb, lightTheme } from '../../dim-theme';
 import { useEffect, useState } from 'react';
 import { useTheme } from '../../hooks/useTheme';
+import gsap from 'gsap';
 
 interface Props {
     onNavigate: (to: string) => void;
@@ -12,7 +13,15 @@ export const Navbar = ({ onNavigate }: Props): JSX.Element => {
     const [lastScrollY, setLastScrollY] = useState(0);
     const { theme, switchTheme } = useTheme();
     const isDark = theme === 'dim';
-
+    useEffect(() => {
+        gsap.from('.navbar', {
+            y: 30,
+            opacity: 0,
+            delay: 1,
+            duration: 3,
+            ease: 'power4.inOut'
+        });
+    }, []);
     useEffect(() => {
         const controlNavbar = () => {
             if (typeof window !== 'undefined') {
