@@ -9,7 +9,7 @@ import SplitType from 'split-type'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Lenis from '@studio-freight/lenis'
 import { DevIcons } from '@ui/DevIcons/DevIcons'
-import { TechSearch } from '@ui/TechSearch/TechSearch'
+import { TechSearch } from '../components/TechSearch/TechSearch'
 gsap.registerPlugin(ScrollTrigger)
 
 export const AboutMe = (): JSX.Element => {
