@@ -2,8 +2,8 @@
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {}
   },
   daisyui: {},
-  plugins: [require('daisyui'), require('@tailwindcss/container-queries')],
-};
+  plugins: [require('daisyui'), require('@tailwindcss/container-queries')]
+}

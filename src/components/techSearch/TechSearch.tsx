@@ -16,9 +16,7 @@ export const TechSearch = (): JSX.Element => {
       <div className={styles.filterWrapper}>
         <div role="tablist" className={cx('tabs tabs-boxed', styles.filter)}>
           <button
-            onClick={() => {
-              handleChangeFilters('language')
-            }}
+            onClick={() => handleChangeFilters('language')}
             role="tab"
             className="tab btn-active"
           >
@@ -73,7 +71,7 @@ export const TechSearch = (): JSX.Element => {
           </Atropos>
         ))}
       </div>
-    </div>
+    </div >
   )
 }
 
