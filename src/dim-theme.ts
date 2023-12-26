@@ -13,7 +13,7 @@ export const darkTheme = {
   success: '#62efbd',
   warning: '#efd057',
   error: '#ffae9b'
-};
+}
 
 export const lightTheme = {
   'color-scheme': 'light',
@@ -27,20 +27,20 @@ export const lightTheme = {
   'base-200': '#F2F2F2',
   'base-300': '#E5E6E6',
   'base-content': '#1f2937'
-};
+}
 
 export function hexToRgb(hex: string): string {
   // Remove the hash at the start if it's there
-  hex = hex.replace(/^#/, '');
+  hex = hex.replace(/^#/, '')
 
   // Parse the hexadecimal string
-  const bigint = parseInt(hex, 16);
+  const bigint = parseInt(hex, 16)
 
   // Split it into red, green, and blue components
-  const r = (bigint >> 16) & 255;
-  const g = (bigint >> 8) & 255;
-  const b = bigint & 255;
+  const r = (bigint >> 16) & 255
+  const g = (bigint >> 8) & 255
+  const b = bigint & 255
 
   // Return the RGB color string
-  return `${r}, ${g}, ${b}`;
+  return `${r}, ${g}, ${b}`
 }

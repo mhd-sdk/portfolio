@@ -44,3 +44,7 @@ body {
 html[data-darkreader-scheme] {
   filter: none !important;
 }
+
+* {
+  transition: background-color 0.2s ease-in-out;
+}

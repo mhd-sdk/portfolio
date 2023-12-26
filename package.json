@@ -8,12 +8,14 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write ."
   },
   "dependencies": {
     "@emotion/css": "^11.11.2",
     "@studio-freight/lenis": "^1.0.29",
+    "atropos": "^2.0.2",
     "emotion": "^11.0.0",
     "gsap": "^3.12.4",
     "react": "^18.2.0",
@@ -45,13 +47,24 @@
     "typescript": "5.1.6",
     "vite": "^4.4.9",
     "vite-plugin-eslint": "^1.8.1",
-    "vite-tsconfig-paths": "^4.2.0"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "none"
+    "vite-tsconfig-paths": "^4.2.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react-hooks": "^4.6.0"
   },
   "eslintConfig": {
     "extends": "./config/.eslintrc.json"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "printWidth": 80,
+    "useTabs": false,
+    "endOfLine": "auto",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "jsxBracketSameLine": false
   }
 }
