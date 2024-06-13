@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { MyProjects } from './pages/MyProjects'
-import { AboutMe } from './pages/AboutMe'
 import { Contact } from './pages/Contact'
 import { createContext, useState } from 'react'
 import { type UseThemeProps } from './hooks/useTheme'
+import { AboutMe } from './pages/AboutMe/AboutMe'
 
 const init: UseThemeProps = { theme: 'black', switchTheme: () => {} }
 export const ThemeContext = createContext(init)

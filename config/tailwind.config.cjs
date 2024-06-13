@@ -5,7 +5,7 @@ module.exports = {
     extend: {},
   },
   daisyui: {
-    themes: ['light', 'black', 'cupcake'],
+    themes: ['light', 'black', 'cupcake', 'night'],
   },
   plugins: [require('daisyui'), require('@tailwindcss/container-queries')],
 }
