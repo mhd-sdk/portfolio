@@ -25,11 +25,6 @@ export const technos = [
     name: 'Bash',
   },
   {
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg',
-    type: 'devops',
-    name: 'Ubuntu',
-  },
-  {
     url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
     type: 'devops',
     name: 'Linux',
@@ -50,7 +45,7 @@ export const technos = [
     name: 'Git',
   },
   {
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+    url: 'https://icones.pro/wp-content/uploads/2021/06/icone-github-orange.png',
     type: 'devops',
     name: 'Github',
   },
@@ -81,7 +76,7 @@ export const technos = [
   },
   {
     url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg',
-    type: 'language',
+    type: 'library',
     name: 'GraphQL',
   },
   {
@@ -100,6 +95,16 @@ export const technos = [
     type: 'library',
   },
   {
+    name: 'DaisyUI',
+    url: 'https://avatars.githubusercontent.com/u/76870092?s=200&v=4',
+    type: 'library',
+  },
+  {
+    name: 'Shadcn',
+    url: 'https://avatars.githubusercontent.com/u/139895814?s=200&v=4',
+    type: 'library',
+  },
+  {
     name: 'Jest',
     url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg',
     type: 'library',
@@ -112,11 +117,6 @@ export const technos = [
   {
     name: 'Postman',
     url: 'https://www.svgrepo.com/show/354202/postman-icon.svg',
-    type: 'library',
-  },
-  {
-    name: 'VSCode',
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
     type: 'library',
   },
   {

@@ -12,6 +12,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Lenis from '@studio-freight/lenis'
 import { Networks } from '@ui/Networks/Networks'
 import { useTheme } from '../hooks/useTheme'
+import { TechSearch } from '@ui/TechSearch/TechSearch'
 gsap.registerPlugin(ScrollTrigger)
 
 export const AboutMe = (): JSX.Element => {
@@ -45,16 +46,14 @@ export const AboutMe = (): JSX.Element => {
   }, [])
   // section 2 reveal on scroll
   useEffect(() => {
-    SplitType.create('.animate-reveal-section-2', {
+    SplitType.create('.string-to-split-section2-h2', {
       charClass: 'char-section-2',
     })
-    gsap.from('.char-section-2', {
-      y: 100,
-      stagger: 0.025,
-      delay: 1,
-      duration: 3,
-      ease: 'power4.inOut',
+
+    SplitType.create('.string-to-split-section2-p', {
+      charClass: 'char-section-2-p',
     })
+
     gsap.from('#section-2-header-text-1 .char-section-2', {
       opacity: 0.2,
       stagger: 3,
@@ -68,26 +67,74 @@ export const AboutMe = (): JSX.Element => {
       },
     })
 
-    // gsap.from('#my-damn-sexy-pic', {
-    //   opacity: 0.2,
-    //   ease: 'power4.inOut',
-    //   scrollTrigger: {
-    //     trigger: '#section-2-header-text',
-    //     start: 'top 80%',
-    //     end: 'top 60%',
-    //     scrub: 1,
-    //     toggleActions: 'play play reverse reverse',
-    //   },
-    // })
+    gsap.from('#section-2-body-text-1', {
+      opacity: 0.2,
+      translateX: -20,
+      ease: 'power4.inOut',
+      scrollTrigger: {
+        trigger: '#my-damn-sexy-pic',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: 1,
+        toggleActions: 'play play reverse reverse',
+      },
+    })
 
-    // gsap.to('#my-damn-sexy-pic', {
-    //   yPercent: -50,
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '#section-2',
-    //     scrub: 1,
-    //   },
-    // })
+    gsap.from('#my-damn-sexy-pic', {
+      opacity: 0.2,
+      translateX: 20,
+      ease: 'power4.inOut',
+      scrollTrigger: {
+        trigger: '#my-damn-sexy-pic',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: 1,
+        toggleActions: 'play play reverse reverse',
+      },
+    })
+
+    gsap.from('#techsearch', {
+      opacity: 0.2,
+      translateY: 20,
+      ease: 'power4.inOut',
+      scrollTrigger: {
+        trigger: '#my-damn-sexy-pic',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: 1,
+        toggleActions: 'play play reverse reverse',
+      },
+    })
+
+    gsap.to('#thatsme', {
+      yPercent: -100,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#section-2',
+        scrub: 1,
+      },
+    })
+
+    gsap.to('#banderolle1', {
+      translateX: -2500,
+      scrollTrigger: {
+        trigger: '#section-3',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1,
+        toggleActions: 'play play reverse reverse',
+      },
+    })
+    gsap.from('#banderolle2', {
+      translateX: -2500,
+      scrollTrigger: {
+        trigger: '#section-3',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1,
+        toggleActions: 'play play reverse reverse',
+      },
+    })
 
     const lenis = new Lenis()
     function raf(time: any) {
@@ -103,7 +150,9 @@ export const AboutMe = (): JSX.Element => {
   return (
     <>
       <div id="scrollable-wrapper">
-        <div id="scrollable-content">
+        <div
+          id="scrollable-content"
+          className={`scroll-snap-type: y mandatory;`}>
           <Navbar onNavigate={handleNavigate} />
           <section id="section-1" className={styles.section1}>
             <div id="hi-im-mehdi" className={styles.overflowHidden}>
@@ -126,35 +175,45 @@ export const AboutMe = (): JSX.Element => {
           </section>
           <section id="section-2" className={cx(styles.section2)}>
             <div className={styles.section2HeroText}>
-              <div className={styles.overflowHidden}>
-                <h2
-                  id="section-2-header-text-1"
-                  className={cx('animate-reveal-section-2', 'font-bold')}>
-                  Create, test, restart...
-                </h2>
-              </div>
-              <div className={styles.overflowHidden}>
+              <h2
+                id="section-2-header-text-1"
+                className={cx('string-to-split-section2-h2', 'font-bold')}>
+                Create, test, restart...
+              </h2>
+              <div>
                 <p
-                  id="section-2-header-text-1"
-                  className={cx('animate-reveal-section-2-body', 'font-bold')}>
+                  id="section-2-body-text-1"
+                  className={cx('string-to-split-section2-p', 'font-bold')}>
                   I'm a code enthusiast, I love to create useful softwares with
                   advanced features.
                 </p>
-              </div>
-              <div className={styles.overflowHidden}>
                 <p
-                  id="section-2-header-text-1"
-                  className={cx('animate-reveal-section-2-body', 'font-bold')}>
+                  id="section-2-body-text-1"
+                  className={cx('string-to-split-section2-p', 'font-bold')}>
                   Specialized in web development, I'm always looking for new
                   challenges.
                 </p>
-              </div>
-              <div className={styles.overflowHidden}>
                 <p
-                  id="section-2-header-text-1"
-                  className={cx('animate-reveal-section-2-body', 'font-bold')}>
+                  id="section-2-body-text-1"
+                  className={cx('string-to-split-section2-p', 'font-bold')}>
                   I love to learn new technologies and improve my skills.
                 </p>
+              </div>
+              <div>
+                <p
+                  id="section-2-body-text-1"
+                  className={cx(
+                    'string-to-split-section2-p',
+                    'font-bold',
+                    css`
+                      margin-bottom: 20px;
+                    `,
+                  )}>
+                  Here are some of the technologies I like to work with:
+                </p>
+                <div id="techsearch">
+                  <TechSearch />
+                </div>
               </div>
             </div>
             <div
@@ -162,20 +221,46 @@ export const AboutMe = (): JSX.Element => {
                 display: flex;
                 flex-direction: column;
               `}>
-              <img
-                id="my-damn-sexy-pic"
-                src={image}
-                alt=""
-                className={styles.image}
-              />
-
-              <img
-                id="thatsme"
-                src={theme === 'light' ? thatsme : whitethatsme}
-                alt=""
-                className={styles.thatsme}
-              />
+              <div id="my-damn-sexy-pic">
+                <img src={image} alt="" className={styles.image} />
+                <img
+                  id="thatsme"
+                  src={theme === 'light' ? thatsme : whitethatsme}
+                  alt=""
+                  className={styles.thatsme}
+                />
+              </div>
             </div>
+          </section>
+          <section id="section-3" className={styles.section3}>
+            <p
+              id="banderolle1"
+              className="opacity-40 text-6xl sm:text-7xl font-semibold whitespace-nowrap ui-left transform-gpu">
+              {Array(5)
+                .fill(' Frontend Backend Fullstack Devops Deployment Testing ')
+                .reduce((str, el) => str.concat(el), '')}{' '}
+            </p>
+            <h2
+              className={css`
+                // center
+                text-align: center;
+              `}>
+              Want to work with me ?
+            </h2>
+            <p
+              id="banderolle2"
+              className="opacity-40 text-6xl sm:text-7xl font-semibold whitespace-nowrap ui-left transform-gpu">
+              {Array(5)
+                .fill(' Integration Engineering Maintenance Documentation ')
+                .reduce((str, el) => str.concat(el), '')}{' '}
+            </p>
+          </section>
+          <section
+            id="section4"
+            className={css`
+              height: 200px;
+            `}>
+            download my resume or contact me
           </section>
         </div>
         <Transition
@@ -213,10 +298,12 @@ const styles = {
   section2HeroText: css`
     display: flex;
     flex-direction: column;
+    // take left space of flex parent
+    flex: 1;
+    gap: 20px;
   `,
   overflowHidden: css`
     overflow: hidden;
-    padding: 5px;
   `,
   section1: css`
     height: 100vh;
@@ -229,21 +316,19 @@ const styles = {
   section2: css`
     width: 100%;
     height: 100vh;
-    padding: 0px 100px 0px 100px;
+    padding: 100px 150px 0px 150px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 50px;
   `,
   section3: css`
-    height: 100vh;
     width: 100%;
-    padding: 0px 80px 0px 80px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    gap: 50px;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
   `,
   heroContent: css`
     display: flex;
@@ -254,5 +339,6 @@ const styles = {
 
     object-fit: cover;
     height: 600px;
+    border-radius: 10px;
   `,
 }

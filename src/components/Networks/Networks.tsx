@@ -23,7 +23,7 @@ export const Networks = (): JSX.Element => {
       </a>
       <a
         className={cx('network-buttons', styles.networkButtons)}
-        href="https://www.instagram.com/bogoss.mhd/"
+        href="https://www.instagram.com/bogoss.mhd_/"
         target="_blank"
         rel="noreferrer">
         <i className="fa fa-instagram" aria-hidden="true"></i>

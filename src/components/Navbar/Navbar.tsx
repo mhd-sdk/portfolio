@@ -47,9 +47,7 @@ export const Navbar = ({ onNavigate }: Props): JSX.Element => {
         height: 50px;
       `}>
       <div className={cx('navbar', styles.navbarWrapper(lastScrollY, isDark))}>
-        <div className="navbar-start">
-          {/* <button className="btn btn-ghost">Resume</button> */}
-        </div>
+        <div className="navbar-start"></div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1" style={{ gap: 10 }}>
             <button
