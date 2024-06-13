@@ -6,15 +6,19 @@ import { Transition } from './Transition'
 import gsap from 'gsap'
 import image from '../assets/picture.png'
 import thatsme from '../assets/thatsme.png'
+import whitethatsme from '../assets/white-itsme.png'
 import SplitType from 'split-type'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Lenis from '@studio-freight/lenis'
 import { Networks } from '@ui/Networks/Networks'
+import { useTheme } from '../hooks/useTheme'
 gsap.registerPlugin(ScrollTrigger)
 
 export const AboutMe = (): JSX.Element => {
   const privacyRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
+
+  const { theme } = useTheme()
 
   const handleNavigate = (to: string) => {
     gsap.to(privacyRef.current, { display: 'block', duration: 0, delay: 0 })
@@ -167,7 +171,7 @@ export const AboutMe = (): JSX.Element => {
 
               <img
                 id="thatsme"
-                src={thatsme}
+                src={theme === 'light' ? thatsme : whitethatsme}
                 alt=""
                 className={styles.thatsme}
               />
