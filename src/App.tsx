@@ -5,22 +5,21 @@ import { Contact } from './pages/Contact'
 import { createContext, useState } from 'react'
 import { type UseThemeProps } from './hooks/useTheme'
 
-const init: UseThemeProps = { theme: 'dim', switchTheme: () => {} }
+const init: UseThemeProps = { theme: 'black', switchTheme: () => {} }
 export const ThemeContext = createContext(init)
 export const App = (): JSX.Element => {
-  // if theme found in local storage, set it
-  const localTheme = localStorage.getItem('mehdi-seddik-theme-mode') ?? 'dim'
-  const [theme, setTheme] = useState<'dim' | 'light'>(
-    localTheme as 'dim' | 'light'
+  const localTheme = localStorage.getItem('mehdi-seddik-theme-mode') ?? 'light'
+  const [theme, setTheme] = useState<'black' | 'light'>(
+    localTheme as 'black' | 'light',
   )
 
   const handleSwitchTheme = () => {
-    if (theme === 'dim') {
+    if (theme === 'black') {
       setTheme('light')
       localStorage.setItem('mehdi-seddik-theme-mode', 'light')
     } else if (theme === 'light') {
-      setTheme('dim')
-      localStorage.setItem('mehdi-seddik-theme-mode', 'dim')
+      setTheme('black')
+      localStorage.setItem('mehdi-seddik-theme-mode', 'black')
     }
   }
 

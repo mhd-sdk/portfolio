@@ -7,9 +7,13 @@ import { darkTheme, lightTheme } from '../../dim-theme'
 import { useTheme } from '../../hooks/useTheme'
 import gsap from 'gsap'
 export const TechSearch = (): JSX.Element => {
-  const [selectedType, setSelectedType] = useState<'language' | 'library' | 'framework' | 'devops' | 'databaset'>('language')
-  const filteredTechnos = technos.filter(techno => techno.type === selectedType)
-  const { theme } = useTheme();
+  const [selectedType, setSelectedType] = useState<
+    'language' | 'library' | 'framework' | 'devops' | 'databaset'
+  >('language')
+  const filteredTechnos = technos.filter(
+    (techno) => techno.type === selectedType,
+  )
+  const { theme } = useTheme()
   return (
     <div className={styles.wrapper}>
       <div className={styles.filterWrapper}>
@@ -17,17 +21,24 @@ export const TechSearch = (): JSX.Element => {
           <button
             onClick={() => setSelectedType('language')}
             role="tab"
-            className={cx("tab", selectedType === "language" && "btn-active")}
-          >
+            className={cx('tab', selectedType === 'language' && 'btn-active')}>
             Langages
           </button>
-          <button className={cx("tab", selectedType === "library" && "btn-active")} onClick={() => setSelectedType('library')}>
+          <button
+            className={cx('tab', selectedType === 'library' && 'btn-active')}
+            onClick={() => setSelectedType('library')}>
             Libraries
           </button>
-          <button role="tab" className={cx("tab", selectedType === "framework" && "btn-active")} onClick={() => setSelectedType('framework')}>
+          <button
+            role="tab"
+            className={cx('tab', selectedType === 'framework' && 'btn-active')}
+            onClick={() => setSelectedType('framework')}>
             Frameworks
           </button>
-          <button role="tab" className={cx("tab", selectedType === "devops" && "btn-active")} onClick={() => setSelectedType('devops')}>
+          <button
+            role="tab"
+            className={cx('tab', selectedType === 'devops' && 'btn-active')}
+            onClick={() => setSelectedType('devops')}>
             Devops
           </button>
         </div>
@@ -40,20 +51,26 @@ export const TechSearch = (): JSX.Element => {
             shadow={false}
             highlight={false}
             onMouseEnter={() => {
-              gsap.to(`#icon-${icon.name}`, { opacity: 1, duration: 0.2, ease: "power1.inOut" })
+              gsap.to(`#icon-${icon.name}`, {
+                opacity: 1,
+                duration: 0.2,
+                ease: 'power1.inOut',
+              })
             }}
             onMouseLeave={() => {
-              gsap.to(`#icon-${icon.name}`, { opacity: 0, duration: 0.2, ease: "power1.inOut" })
-            }}
-          >
+              gsap.to(`#icon-${icon.name}`, {
+                opacity: 0,
+                duration: 0.2,
+                ease: 'power1.inOut',
+              })
+            }}>
             <div
               className={css`
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 height: 100%;
-              `}
-            >
+              `}>
               <img
                 data-atropos-offset="5"
                 alt=""
@@ -64,21 +81,26 @@ export const TechSearch = (): JSX.Element => {
                 key={index}
                 src={icon.url}
               />
-              <p id={`icon-${icon.name}`} data-atropos-offset={7} className={styles.techName(theme)}>
+              <p
+                id={`icon-${icon.name}`}
+                data-atropos-offset={7}
+                className={styles.techName(theme)}>
                 {icon.name}
               </p>
             </div>
           </Atropos>
         ))}
       </div>
-    </div >
+    </div>
   )
 }
 
 const styles = {
   techName: (theme: string) => css`
-    position:absolute;
-    background:${theme === "dim" ? darkTheme['base-100'] : lightTheme['base-200']}; 
+    position: absolute;
+    background: ${theme === 'black'
+      ? darkTheme['base-100']
+      : lightTheme['base-200']};
     bottom: 0px;
     border-radius: 5px;
     padding: 0px 2px;
@@ -94,7 +116,6 @@ const styles = {
     width: 90px;
     height: 80px;
     background-color: none;
-    
   `,
   filterWrapper: css`
     bottom: 0px;
@@ -111,5 +132,5 @@ const styles = {
     display: flex;
     flex-direction: column;
     gap: 40px;
-  `
+  `,
 }

@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { ThemeContext } from '../App'
 
 export interface UseThemeProps {
-  theme: 'light' | 'dim'
+  theme: 'light' | 'black'
   switchTheme: () => void
 }
 

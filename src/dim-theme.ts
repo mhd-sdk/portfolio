@@ -1,18 +1,24 @@
 export const darkTheme = {
   'color-scheme': 'dark',
-  primary: '#9FE88D',
-  secondary: '#FF7D5C',
-  accent: '#C792E9',
-  neutral: '#1c212b',
-  'neutral-content': '#B2CCD6',
-  'base-100': '#2A303C',
-  'base-200': '#242933',
-  'base-300': '#20252E',
-  'base-content': '#B2CCD6',
-  info: '#28ebff',
-  success: '#62efbd',
-  warning: '#efd057',
-  error: '#ffae9b'
+  primary: '#373737',
+  secondary: '#373737',
+  accent: '#373737',
+  'base-100': '#000000',
+  'base-200': '#141414',
+  'base-300': '#262626',
+  'base-content': '#d6d6d6',
+  neutral: '#373737',
+  info: '#0000ff',
+  success: '#008000',
+  warning: '#ffff00',
+  error: '#ff0000',
+  '--rounded-box': '0',
+  '--rounded-btn': '0',
+  '--rounded-badge': '0',
+  '--animation-btn': '0',
+  '--animation-input': '0',
+  '--btn-focus-scale': '1',
+  '--tab-radius': '0',
 }
 
 export const lightTheme = {
@@ -26,7 +32,7 @@ export const lightTheme = {
   'base-100': 'oklch(100% 0 0)',
   'base-200': '#F2F2F2',
   'base-300': '#E5E6E6',
-  'base-content': '#1f2937'
+  'base-content': '#1f2937',
 }
 
 export function hexToRgb(hex: string): string {

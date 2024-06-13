@@ -16,19 +16,19 @@ export const Transition = ({ privacyRef, titleRef, title }: Props) => {
         x: '0vw',
         duration: 0,
         delay: 0,
-        ease: 'power4.inOut'
+        ease: 'power4.inOut',
       })
       .to(privacyRef.current, {
         x: '100vw',
         duration: 1,
         delay: 1.5,
-        ease: 'power4.inOut'
+        ease: 'power4.inOut',
       })
       .to(privacyRef.current, {
         x: '-100vw',
         duration: 0,
         delay: 0,
-        ease: 'power4.inOut'
+        ease: 'power4.inOut',
       })
   }, [])
 
@@ -41,26 +41,26 @@ export const Transition = ({ privacyRef, titleRef, title }: Props) => {
         y: '-100px',
         duration: 0,
         ease: 'power4.inOut',
-        delay: 0
+        delay: 0,
       })
       .to(titleRef.current, {
         opacity: 1,
         y: '-50px',
         duration: 1,
         ease: 'power4.inOut',
-        display: 'block'
+        display: 'block',
       })
       .to(titleRef.current, {
         opacity: 0,
         y: '0px',
         duration: 1,
         ease: 'power4.inOut',
-        display: 'none'
+        display: 'none',
       })
   }, [])
 
   const { theme } = useTheme()
-  const isDark = theme === 'dim'
+  const isDark = theme === 'black'
 
   return (
     <>
@@ -68,7 +68,7 @@ export const Transition = ({ privacyRef, titleRef, title }: Props) => {
         ref={privacyRef}
         className={css`
           background-color: ${isDark
-            ? darkTheme['base-100']
+            ? darkTheme['base-200']
             : lightTheme['base-300']};
           height: 100%;
           width: 100%;
@@ -87,8 +87,7 @@ export const Transition = ({ privacyRef, titleRef, title }: Props) => {
           transform: translate(-50%, -50%);
           z-index: 300;
           display: none;
-        `}
-      >
+        `}>
         {title}
       </h1>
     </>
