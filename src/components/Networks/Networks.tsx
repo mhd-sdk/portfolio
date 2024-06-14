@@ -11,12 +11,12 @@ export const Networks = (): JSX.Element => {
       duration: 3,
       ease: 'power4.inOut',
     })
-  }, [])
+  }, []);
   return (
     <div className={styles.flex}>
       <a
         className={cx('network-buttons', styles.networkButtons)}
-        href="https://www.linkedin.com/in/mehdi-seddik-841b341b9/"
+        href="https://www.linkedin.com/in/mehdi-seddik-841b341b9/" // Pro tips: you should remove the random id at the end of your linkedin account, its easier to reach ya if you do so !
         target="_blank"
         rel="noreferrer">
         <i className="fa fa-linkedin" aria-hidden="true"></i>

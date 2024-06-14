@@ -7,24 +7,20 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { darkTheme, lightTheme } from '../../dim-theme'
 import { useTheme } from '../../hooks/useTheme'
 import gsap from 'gsap'
-export const TechSearch = (): JSX.Element => {
-  const [selectedType, setSelectedType] = useState<
-    'language' | 'library' | 'framework' | 'devops' | 'databaset'
-  >('language')
-  const [isAllowedToswitch, setIsAllowedToSwitch] = useState(true)
 
-  const handleChanged = (type: string) => {
+type Type = 'language' | 'library' | 'framework' | 'devops';
+export const TechSearch = (): JSX.Element => {
+  const [selectedType, setSelectedType] = useState<Type>('language');
+  const [isAllowedToswitch, setIsAllowedToSwitch] = useState(true);
+
+  const handleChanged = (type: Type): void => {
     if (!isAllowedToswitch) return
-    setIsAllowedToSwitch(false)
-    setSelectedType(type as 'language' | 'library' | 'framework' | 'devops')
-    setTimeout(() => {
-      setIsAllowedToSwitch(true)
-    }, 2600)
+    setIsAllowedToSwitch(false);
+    setSelectedType(type);
+    setTimeout(() => setIsAllowedToSwitch(true), 2600);
   }
-  const filteredTechnos = technos.filter(
-    (techno) => techno.type === selectedType,
-  )
-  const { theme } = useTheme()
+  const filteredTechnos = technos.filter(({ type }) => type === selectedType);
+  const { theme } = useTheme();
   return (
     <div className={styles.wrapper}>
       <div className={styles.filterWrapper}>

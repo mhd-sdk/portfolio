@@ -1,17 +1,17 @@
 import { useContext } from 'react'
-import { ThemeContext } from '../App'
+import { ThemeContext, Theme } from '../App'
 
 export interface UseThemeProps {
-  theme: 'light' | 'black'
+  theme: Theme
   switchTheme: () => void
-}
+};
 
 export const useTheme = (): UseThemeProps => {
-  const context = useContext(ThemeContext)
+  const context = useContext(ThemeContext);
 
   if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider')
+    throw new Error('useTheme must be used within a ThemeProvider');
   }
 
-  return context
+  return context;
 }

@@ -8,9 +8,9 @@ interface Props {
   titleRef: RefObject<HTMLHeadingElement>
   title: string
 }
-export const Transition = ({ privacyRef, titleRef, title }: Props) => {
+export const Transition = ({ privacyRef, titleRef, title }: Props): JSX.Element => {
   useEffect(() => {
-    const tl = gsap.timeline()
+    const tl = gsap.timeline();
     void tl
       .to(privacyRef.current, {
         x: '0vw',
@@ -29,11 +29,11 @@ export const Transition = ({ privacyRef, titleRef, title }: Props) => {
         duration: 0,
         delay: 0,
         ease: 'power4.inOut',
-      })
-  }, [])
+      });
+  }, []);
 
   useEffect(() => {
-    const tl = gsap.timeline()
+    const tl = gsap.timeline();
     // make title fade in, then fade out, while moving from bottom to top
     void tl
       .to(titleRef.current, {
@@ -56,10 +56,10 @@ export const Transition = ({ privacyRef, titleRef, title }: Props) => {
         duration: 1,
         ease: 'power4.inOut',
         display: 'none',
-      })
-  }, [])
+      });
+  }, []);
 
-  const { theme } = useTheme()
+  const { theme } = useTheme();
   const isDark = theme === 'black'
 
   return (
@@ -91,5 +91,5 @@ export const Transition = ({ privacyRef, titleRef, title }: Props) => {
         {title}
       </h1>
     </>
-  )
+  );
 }

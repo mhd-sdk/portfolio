@@ -8,9 +8,9 @@ interface Props {
 }
 
 export const Navbar = ({ onNavigate }: Props): JSX.Element => {
-  const [lastScrollY, setLastScrollY] = useState(0)
-  const { theme, switchTheme } = useTheme()
-  const isDark = theme === 'black'
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const { theme, switchTheme } = useTheme();
+  const isDark = theme === 'black';
   useEffect(() => {
     gsap.from('.navbar', {
       y: 30,
@@ -19,7 +19,7 @@ export const Navbar = ({ onNavigate }: Props): JSX.Element => {
       duration: 3,
       ease: 'power4.inOut',
     })
-  }, [])
+  }, []);
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', () => {
@@ -31,13 +31,13 @@ export const Navbar = ({ onNavigate }: Props): JSX.Element => {
         })
       }
     }
-  }, [lastScrollY])
+  }, [lastScrollY]);
 
   const handleNavigate = (to: string) => {
     if (window.location.pathname === to) {
       return
     }
-    onNavigate(to)
+    onNavigate(to);
   }
   return (
     <div
@@ -105,7 +105,7 @@ export const Navbar = ({ onNavigate }: Props): JSX.Element => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 const styles = {
