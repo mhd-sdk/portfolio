@@ -1,41 +1,42 @@
-import { useEffect, useRef } from 'react'
-import { css, cx } from '@emotion/css'
-import { navigateWithDelay } from './navigateWithDelay'
-import { Navbar } from '@ui/Navbar/Navbar'
-import { Transition } from './Transition'
-import gsap from 'gsap'
-import image from '../assets/picture.png'
-import thatsme from '../assets/thatsme.png'
-import whitethatsme from '../assets/white-itsme.png'
-import SplitType from 'split-type'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import Lenis from '@studio-freight/lenis'
-import { Networks } from '@ui/Networks/Networks'
-import { useTheme } from '../hooks/useTheme'
-import { TechSearch } from '@ui/TechSearch/TechSearch'
-gsap.registerPlugin(ScrollTrigger)
+import { useEffect, useRef } from 'react';
+import { css, cx } from '@emotion/css';
+import { navigateWithDelay } from './navigateWithDelay';
+import { Navbar } from '@ui/Navbar/Navbar';
+import { Transition } from './Transition';
+import gsap from 'gsap';
+import image from '../assets/picture.png';
+import thatsme from '../assets/thatsme.png';
+import whitethatsme from '../assets/white-itsme.png';
+import SplitType from 'split-type';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import Lenis from '@studio-freight/lenis';
+import { Networks } from '@ui/Networks/Networks';
+import { useTheme } from '../hooks/useTheme';
+import { TechSearch } from '@ui/TechSearch/TechSearch';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const AboutMe = (): JSX.Element => {
-  const privacyRef = useRef<HTMLDivElement>(null)
-  const titleRef = useRef<HTMLHeadingElement>(null)
+  const privacyRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
-  const { theme } = useTheme()
+  const { theme } = useTheme();
 
   const handleNavigate = (to: string) => {
-    gsap.to(privacyRef.current, { display: 'block', duration: 0, delay: 0 })
+    gsap.to(privacyRef.current, { display: 'block', duration: 0, delay: 0 });
     gsap.to(privacyRef.current, {
       x: '0vw',
       duration: 1,
       ease: 'power4.inOut',
-    })
-    navigateWithDelay(to)
+    });
+    navigateWithDelay(to);
   }
-  const textRevealRef = useRef<HTMLHeadingElement>(null)
+  const textRevealRef = useRef<HTMLHeadingElement>(null);
   // section 1 gsap
   useEffect(() => {
     SplitType.create('.animate-reveal-section-1', {
       charClass: 'char-section-1',
-    })
+    });
     gsap.from('.char-section-1', {
       y: 100,
       stagger: 0.025,
@@ -43,16 +44,17 @@ export const AboutMe = (): JSX.Element => {
       duration: 3,
       ease: 'power4.inOut',
     })
-  }, [])
+  }, []);
+
   // section 2 reveal on scroll
   useEffect(() => {
     SplitType.create('.string-to-split-section2-h2', {
       charClass: 'char-section-2',
-    })
+    });
 
     SplitType.create('.string-to-split-section2-p', {
       charClass: 'char-section-2-p',
-    })
+    });
 
     gsap.from('#section-2-header-text-1 .char-section-2', {
       opacity: 0.2,
@@ -65,7 +67,7 @@ export const AboutMe = (): JSX.Element => {
         scrub: 1,
         toggleActions: 'play play reverse reverse',
       },
-    })
+    });
 
     gsap.from('#section-2-body-text-1', {
       opacity: 0.2,
@@ -78,8 +80,9 @@ export const AboutMe = (): JSX.Element => {
         scrub: 1,
         toggleActions: 'play play reverse reverse',
       },
-    })
+    });
 
+    // 👀👀👀
     gsap.from('#my-damn-sexy-pic', {
       opacity: 0.2,
       translateX: 20,
@@ -91,7 +94,7 @@ export const AboutMe = (): JSX.Element => {
         scrub: 1,
         toggleActions: 'play play reverse reverse',
       },
-    })
+    });
 
     gsap.from('#techsearch', {
       opacity: 0.2,
@@ -104,7 +107,7 @@ export const AboutMe = (): JSX.Element => {
         scrub: 1,
         toggleActions: 'play play reverse reverse',
       },
-    })
+    });
 
     gsap.to('#thatsme', {
       yPercent: -100,
@@ -113,7 +116,7 @@ export const AboutMe = (): JSX.Element => {
         trigger: '#section-2',
         scrub: 1,
       },
-    })
+    });
 
     gsap.to('#banderolle1', {
       translateX: -2500,
@@ -124,7 +127,7 @@ export const AboutMe = (): JSX.Element => {
         scrub: 1,
         toggleActions: 'play play reverse reverse',
       },
-    })
+    });
     gsap.from('#banderolle2', {
       translateX: -2500,
       scrollTrigger: {
@@ -134,16 +137,16 @@ export const AboutMe = (): JSX.Element => {
         scrub: 1,
         toggleActions: 'play play reverse reverse',
       },
-    })
+    });
 
-    const lenis = new Lenis()
+    const lenis = new Lenis();
     function raf(time: any) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf)
-  }, [])
+    requestAnimationFrame(raf);
+  }, []);
 
   // section 4 reveal on scroll
 
@@ -236,7 +239,7 @@ export const AboutMe = (): JSX.Element => {
             <p
               id="banderolle1"
               className="opacity-40 text-6xl sm:text-7xl font-semibold whitespace-nowrap ui-left transform-gpu">
-              {Array(5)
+              {Array.from(new Array(5))
                 .fill(' Frontend Backend Fullstack Devops Deployment Testing ')
                 .reduce((str, el) => str.concat(el), '')}{' '}
             </p>
@@ -250,7 +253,7 @@ export const AboutMe = (): JSX.Element => {
             <p
               id="banderolle2"
               className="opacity-40 text-6xl sm:text-7xl font-semibold whitespace-nowrap ui-left transform-gpu">
-              {Array(5)
+              {Array.from(new Array(5))
                 .fill(' Integration Engineering Maintenance Documentation ')
                 .reduce((str, el) => str.concat(el), '')}{' '}
             </p>
@@ -270,7 +273,7 @@ export const AboutMe = (): JSX.Element => {
         />
       </div>
     </>
-  )
+  );
 }
 
 const styles = {

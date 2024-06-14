@@ -4,10 +4,10 @@ import gsap from 'gsap'
 import { Navbar } from '@ui/Navbar/Navbar'
 import { Transition } from './Transition'
 
-export const MyProjects = () => {
-  const privacyRef = useRef<HTMLDivElement>(null)
-  const titleRef = useRef<HTMLHeadingElement>(null)
-  const scrollDivRef = useRef(null)
+export const MyProjects = (): JSX.Element => {
+  const privacyRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const scrollDivRef = useRef(null);
 
   const handleNavigate = (to: string) => {
     gsap.to(privacyRef.current, { display: 'block', duration: 0, delay: 0 })

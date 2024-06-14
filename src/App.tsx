@@ -5,22 +5,17 @@ import { Contact } from './pages/Contact'
 import { createContext, useState } from 'react'
 import { type UseThemeProps } from './hooks/useTheme'
 
-const init: UseThemeProps = { theme: 'black', switchTheme: () => {} }
-export const ThemeContext = createContext(init)
-export const App = (): JSX.Element => {
-  const localTheme = localStorage.getItem('mehdi-seddik-theme-mode') ?? 'light'
-  const [theme, setTheme] = useState<'black' | 'light'>(
-    localTheme as 'black' | 'light',
-  )
+export type Theme = 'black' | 'light';
+const init: UseThemeProps = { theme: 'black', switchTheme: () => {} };
+export const ThemeContext = createContext(init);
 
-  const handleSwitchTheme = () => {
-    if (theme === 'black') {
-      setTheme('light')
-      localStorage.setItem('mehdi-seddik-theme-mode', 'light')
-    } else if (theme === 'light') {
-      setTheme('black')
-      localStorage.setItem('mehdi-seddik-theme-mode', 'black')
-    }
+export const App = (): JSX.Element => {
+  const localTheme: Theme = localStorage.getItem('mehdi-seddik-theme-mode') ?? 'light'
+  const [theme, setTheme] = useState<Theme>(localTheme);
+
+  const handleSwitchTheme = (): void => {
+    setTheme(theme);
+    localStorage.setItem('mehdi-seddik-theme-mode', theme);
   }
 
   return (
@@ -28,9 +23,9 @@ export const App = (): JSX.Element => {
       <div className="app">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<AboutMe />} />
-            <Route path="/projects" element={<MyProjects />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/projects" element={MyProjects} />
+            <Route path="/contact" element={Contact} />
+            <Route path="/" element={AboutMe} />
           </Routes>
         </BrowserRouter>
       </div>

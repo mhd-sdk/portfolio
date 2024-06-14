@@ -1,5 +1,5 @@
-export const navigateWithDelay = (to: string) => {
+export const navigateWithDelay = (to: string): void => {
   setTimeout(() => {
     window.location.href = to
-  }, 1000)
-}
+  }, 1000);
+};
