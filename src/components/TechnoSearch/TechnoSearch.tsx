@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { darkTheme, lightTheme } from '../../dim-theme'
 import { useTheme } from '../../hooks/useTheme'
 import gsap from 'gsap'
-export const TechSearch = (): JSX.Element => {
+export const TechnoSearch = (): JSX.Element => {
   const [selectedType, setSelectedType] = useState<
     'language' | 'library' | 'framework' | 'devops' | 'databaset'
   >('language')

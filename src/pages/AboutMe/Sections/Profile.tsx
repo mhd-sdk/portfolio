@@ -1,5 +1,4 @@
 import { css, cx } from '@emotion/css'
-import { TechSearch } from '@ui/TechSearch/TechSearch'
 import image from '../../../assets/picture.png'
 import thatsme from '../../../assets/thatsme.png'
 import whitethatsme from '../../../assets/white-itsme.png'
@@ -7,6 +6,7 @@ import { useTheme } from '../../../hooks/useTheme'
 import { useEffect } from 'react'
 import SplitType from 'split-type'
 import { gsap } from 'gsap'
+import { TechnoSearch } from '@ui/TechnoSearch/TechnoSearch'
 
 export const Profile = (): JSX.Element => {
   const { theme } = useTheme()
@@ -122,7 +122,7 @@ export const Profile = (): JSX.Element => {
             Here are some of the technologies I like to work with:
           </p>
           <div id="techsearch">
-            <TechSearch />
+            <TechnoSearch />
           </div>
         </div>
       </div>
