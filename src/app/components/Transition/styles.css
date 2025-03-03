@@ -1,7 +1,7 @@
 @import '../../globals.css';
 
 .privacy {
-  background-color: black;
+  background-color: var(--fg);
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -12,10 +12,32 @@
   align-items: center; /* Vertically centers the h1 */
 }
 
-.privacy-content {
-  position: fixed;
+#privacy-content {
+  position: absolute;
   /* center text */
   z-index: 300;
-  display: none;
-  color: white;
+  color: var(--bg);
+  /* center elemnt*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* rotate content and scale */
+  opacity: 0;
+
 }
+
+
+#privacy-wrapper {
+  /* background-color: var(--fg); */
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  z-index: 100;
+  /* rotate content and scale */
+  /* transform: rotate(-10deg) scale(1.5); */
+  /* no scroll */
+  overflow: hidden;
+}
+
+

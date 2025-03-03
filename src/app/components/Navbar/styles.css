@@ -4,20 +4,20 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 1rem 0rem 1rem;
-  position: fixed;
+  position: absolute;
   right: 0;
-  color: var(--mud);
+  color: var(--nord4);
+  margin-right: 20rem;
 }
 
 #navbar-list {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   /* center elements in line */
   align-items: center;
 }
 
 .link-divider{
-  border-left: 2px solid var(--aluminum);
   height: 80%;
 }
 

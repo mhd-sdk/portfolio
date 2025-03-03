@@ -1,8 +1,9 @@
 import { css, cx } from '@emotion/css';
 import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 import { JSX } from 'react';
 
-export const Profile = (): JSX.Element => {
+export const About = (): JSX.Element => {
   useGSAP(() => {
     gsap.from('#section-2-header-text-1 .char-section-2', {
       opacity: 0.2,

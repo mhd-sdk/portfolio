@@ -1,62 +1,14 @@
-:root {
+@import './nord.css';
+
+:root {  
   font-family: Departure Mono, monospace;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --flick: cubic-bezier(.36, 2.09, .07, -1.52);
 
-  --foam: #bccabb;
-  --enamel: #eeeeee;
-  --cement: #c0c0c0;
-  --aluminum: #cccccc;
-  --ash: #8e8e8e;
-  --mud: #8a8a6f;
-  --clay: #6c6c58;
-  --smoke: #666666;
-  --dark: #444444;
-  --soot: #333333;
-  --carbon: #222222;
-  --black: #141414;
-
-
-
-
-
-  
-  --fg: var(--dark);
-  --bg: var(--enamel);
-  color: var(--fg);
-}
-
-[data-theme='dark'] {
-  font-family: Departure Mono, monospace;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color-scheme: light dark;
-  font-size: 11px;
-  --unit: 1em;
-  --t: 0%;
-  --flick: cubic-bezier(.36, 2.09, .07, -1.52);
-  --amber: #ffa133;
-  --pumpkin: #e47b1a;
-  --flux: #c8be50;
-  --foam: #bccabb;
-  --enamel: #eeeeee;
-  --cement: #c0c0c0;
-  --aluminum: #cccccc;
-  --ash: #8e8e8e;
-  --mud: #8a8a6f;
-  --clay: #6c6c58;
-  --smoke: #666666;
-  --dark: #444444;
-  --soot: #333333;
-  --carbon: #222222;
-  --black: #141414;
-  --accent: var(--amber);
-  --fg: var(--dark);
-  --bg: var(--enamel);
+  --white: #ffffff;
+  --bg: var(--nord3);
+  --fg: var(--white);
   color: var(--fg);
 }
 
@@ -136,8 +88,8 @@ h6 {
 
 /* quand on selectionne du texte */
 ::selection {
-  background: var(--carbon);
-  color: white;
+  background: var(--fg);
+  color: var(--bg);
 }
 
 

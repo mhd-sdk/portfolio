@@ -1,4 +1,3 @@
-
 import { css } from '@emotion/css';
 import { gsap } from 'gsap';
 import { useLayoutEffect } from 'react';
@@ -29,7 +28,14 @@ export const WannaWorkWithMe = (): JSX.Element => {
 
   return (
     <section id="section-3" className={styles.section3}>
-      <p id="banderolle1" className="opacity-40 text-6xl sm:text-7xl font-semibold whitespace-nowrap ui-left transform-gpu">
+      <p
+        id="banderolle1"
+        style={{
+          fontSize: '2rem',
+          // no wrap
+          textWrap: 'nowrap',
+        }}
+      >
         {Array(5)
           .fill(' Frontend Backend Fullstack Devops Deployment Testing ')
           .reduce((str, el) => str.concat(el), '')}{' '}
@@ -41,9 +47,16 @@ export const WannaWorkWithMe = (): JSX.Element => {
       >
         Want to work with me ?
       </h2>
-      <p id="banderolle2" className="opacity-40 text-6xl sm:text-7xl font-semibold whitespace-nowrap ui-left transform-gpu">
+      <p
+        id="banderolle2"
+        style={{
+          fontSize: '2rem',
+          // no wrap
+          textWrap: 'nowrap',
+        }}
+      >
         {Array(5)
-          .fill(' Integration Engineering Maintenance Documentation ')
+          .fill(' IOT Engineering Cloud Maintenance Web ')
           .reduce((str, el) => str.concat(el), '')}{' '}
       </p>
     </section>
