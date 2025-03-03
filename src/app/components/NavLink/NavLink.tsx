@@ -1,3 +1,4 @@
+'use client';
 import { JSX, useEffect, useRef } from 'react';
 import './styles.css';
 interface Props {

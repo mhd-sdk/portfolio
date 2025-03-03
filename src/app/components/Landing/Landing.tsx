@@ -1,27 +1,33 @@
 'use client';
 import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
+import anime from 'animejs';
 import { JSX } from 'react';
-import SplitType from 'split-type';
 import './styles.css';
 
 export const Landing = (): JSX.Element => {
   useGSAP(() => {
-    SplitType.create('.split-landing', {
-      charClass: 'char-landing',
-    });
-    gsap.from('.char-landing', {
-      y: 100,
-      stagger: 0.05,
-      delay: 1,
-      duration: 3,
-      ease: 'power4.inOut',
-    });
-    // avoid ssr flicker
-    gsap.to('#landing', {
-      duration: 1,
-      ease: 'power4.inOut',
-      opacity: 1,
+    // gsap.from('.split-landing', {
+    //   y: 100,
+    //   stagger: 0.5,
+    //   delay: 2.5,
+    //   duration: 5,
+    //   ease: 'power4.inOut',
+    // });
+    // // avoid ssr flicker
+    // gsap.to('#landing', {
+    //   duration: 1,
+    //   ease: 'power4.inOut',
+    //   opacity: 1,
+    // });
+
+    anime.timeline({ loop: false }).add({
+      targets: '.split-landing',
+      opacity: [0, 1],
+      translateZ: 0,
+      translateY: [100, 0],
+      easing: 'easeOutExpo',
+      duration: 2000,
+      delay: anime.stagger(300, { start: 5000 }),
     });
   }, []);
 

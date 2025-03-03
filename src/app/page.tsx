@@ -5,25 +5,19 @@ import { JSX, useEffect } from 'react';
 import { default as LenisLib } from '@studio-freight/lenis';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useTheme } from 'next-themes';
+import { usePathname } from 'next/navigation';
+import { About } from './components/About/About';
 import { Landing } from './components/Landing/Landing';
 import { Navbar } from './components/Navbar/Navbar';
 import { Transition } from './components/Transition/Transition';
-import { navigateWithDelay } from './utils/navigateWithDelay';
+import { WannaWorkWithMe } from './components/WorkWithMe/WannaWorkWithMe';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const AboutMe = (): JSX.Element => {
-  const handleNavigate = (to: string) => {
-    gsap.to('.privacy', { display: 'block', duration: 0, delay: 0 });
-    gsap.to('.privacy', {
-      x: '0vw',
-      duration: 1,
-      ease: 'power4.inOut',
-    });
-    navigateWithDelay(to);
-  };
+export const Home = (): JSX.Element => {
   const { themes, theme } = useTheme();
-  console.log(themes, theme);
+  const pathname = usePathname();
+
   useEffect(() => {
     const lenis = new LenisLib();
     function raf(time: number) {
@@ -35,13 +29,11 @@ export const AboutMe = (): JSX.Element => {
 
   return (
     <>
-      <div id="scrollable-wrapper">
-        <div id="scrollable-content" className={`scroll-snap-type: y mandatory;`}>
-          <Navbar onNavigate={handleNavigate} />
-          <Landing />
-          {/* <Profile /> */}
-          {/* <Timeline />
-          <WannaWorkWithMe />
+      <Navbar />
+      <Landing />
+      <About />
+      <WannaWorkWithMe />
+      {/* <Timeline />
           <section
             id="section4"
             className={css`
@@ -50,11 +42,10 @@ export const AboutMe = (): JSX.Element => {
           >
             download my resume or contact me
           </section> */}
-        </div>
-        <Transition title={'Mehdi seddik'}></Transition>
-      </div>
+
+      <Transition />
     </>
   );
 };
 
-export default AboutMe;
+export default Home;
