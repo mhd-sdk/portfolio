@@ -1,0 +1,5 @@
+@import '../../globals.css';
+
+.active-navlink {
+  color: var(--fg) !important;
+}

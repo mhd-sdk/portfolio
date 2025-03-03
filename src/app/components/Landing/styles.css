@@ -1,0 +1,32 @@
+.section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reveal-overflow {
+  overflow: hidden;
+}
+
+.privacy {
+  background-color: green;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 200;
+}
+
+#landing{
+  /* avoid ssr flicker */
+  opacity: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

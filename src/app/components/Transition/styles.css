@@ -1,0 +1,21 @@
+@import '../../globals.css';
+
+.privacy {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: center; /* Horizontally centers the h1 */
+  align-items: center; /* Vertically centers the h1 */
+}
+
+.privacy-content {
+  position: fixed;
+  /* center text */
+  z-index: 300;
+  display: none;
+  color: white;
+}

@@ -1,0 +1,23 @@
+@import '../../globals.css';
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1rem 0rem 1rem;
+  position: fixed;
+  right: 0;
+  color: var(--mud);
+}
+
+#navbar-list {
+  display: flex;
+  gap: 1rem;
+  /* center elements in line */
+  align-items: center;
+}
+
+.link-divider{
+  border-left: 2px solid var(--aluminum);
+  height: 80%;
+}
+

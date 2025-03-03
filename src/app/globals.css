@@ -1,0 +1,144 @@
+:root {
+  font-family: Departure Mono, monospace;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --flick: cubic-bezier(.36, 2.09, .07, -1.52);
+
+  --foam: #bccabb;
+  --enamel: #eeeeee;
+  --cement: #c0c0c0;
+  --aluminum: #cccccc;
+  --ash: #8e8e8e;
+  --mud: #8a8a6f;
+  --clay: #6c6c58;
+  --smoke: #666666;
+  --dark: #444444;
+  --soot: #333333;
+  --carbon: #222222;
+  --black: #141414;
+
+
+
+
+
+  
+  --fg: var(--dark);
+  --bg: var(--enamel);
+  color: var(--fg);
+}
+
+[data-theme='dark'] {
+  font-family: Departure Mono, monospace;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: light dark;
+  font-size: 11px;
+  --unit: 1em;
+  --t: 0%;
+  --flick: cubic-bezier(.36, 2.09, .07, -1.52);
+  --amber: #ffa133;
+  --pumpkin: #e47b1a;
+  --flux: #c8be50;
+  --foam: #bccabb;
+  --enamel: #eeeeee;
+  --cement: #c0c0c0;
+  --aluminum: #cccccc;
+  --ash: #8e8e8e;
+  --mud: #8a8a6f;
+  --clay: #6c6c58;
+  --smoke: #666666;
+  --dark: #444444;
+  --soot: #333333;
+  --carbon: #222222;
+  --black: #141414;
+  --accent: var(--amber);
+  --fg: var(--dark);
+  --bg: var(--enamel);
+  color: var(--fg);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Departure";
+  src: url("/fonts/DepartureMono-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: Departure, Arial, Helvetica, sans-serif;
+}
+
+
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--fg);
+  background: var(--bg);
+  font-family: Departure, Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.5rem; /* Augmentation de 3rem à 3.5rem */
+}
+
+h2 {
+  font-size: 3rem; /* Augmentation de 2.5rem à 3rem */
+}
+
+h3 {
+  font-size: 2.5rem; /* Augmentation de 2rem à 2.5rem */
+}
+
+h4 {
+  font-size: 2rem; /* Augmentation de 1.75rem à 2rem */
+}
+
+h5 {
+  font-size: 1.75rem; /* Augmentation de 1.5rem à 1.75rem */
+}
+
+h6 {
+  font-size: 1.5rem; /* Augmentation de 1.25rem à 1.5rem */
+}
+
+/* hide scroll bar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* quand on selectionne du texte */
+::selection {
+  background: var(--carbon);
+  color: white;
+}
+
+
+
