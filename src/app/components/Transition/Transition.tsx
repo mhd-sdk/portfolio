@@ -43,34 +43,51 @@ export const Transition = () => {
 
     const tl = gsap.timeline();
     void tl
+      .to('.privacy', {
+        display: 'block',
+        duration: 0,
+      })
       .to('#privacy-content', {
         opacity: 1,
         duration: 1,
         delay: 0,
         ease: 'power4.inOut',
       })
-      .to('.privacy', {
-        x: '100vw',
-        duration: 1.2,
+      .to('.transition-span', {
+        opacity: 0,
+        y: '100%',
+        duration: 1,
         delay: 2.5,
         ease: 'power4.inOut',
       })
-      .to('#privacy-content', {
-        opacity: 0,
-        duration: 0,
-        delay: 0,
+      .to('.panel', {
+        y: '-100%',
+        duration: 1.2,
+        stagger: 0.1, // Stagger effect between each panel
         ease: 'power4.inOut',
+        delay: -1,
+      })
+      .to('.privacy', {
+        display: 'none',
+        duration: 0,
       });
   }, [pathname]);
 
   return (
     <div className="privacy">
-      <h1 id="privacy-content">
-        <span ref={textRef} id="transition-span"></span>
-        <span ref={cursorRef} id="transition-cursor">
+      <div className="panels-container">
+        <div className="panel "></div>
+        <div className="panel "></div>
+        <div className="panel "></div>
+        <div className="panel "></div>
+      </div>
+
+      <div id="privacy-content">
+        <span ref={textRef} className="transition-span"></span>
+        <span ref={cursorRef} className="transition-span">
           |
         </span>
-      </h1>
+      </div>
     </div>
   );
 };

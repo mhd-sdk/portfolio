@@ -1,0 +1,19 @@
+@import '../../nord.css';
+
+#about {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--nord2);
+  display: flex;
+
+}
+
+#about-bg-header {
+  color: var(--nord6);
+
+  font-size: 16em;
+  /* stick to bottom of container */
+  opacity: 0.2;
+  /* fait en sorte au'il garde son positionnement, mais qu'il n'y ai pas de collisions avec d'autres elements */
+
+}
