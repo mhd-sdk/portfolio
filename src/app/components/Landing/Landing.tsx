@@ -1,43 +1,32 @@
 'use client';
 import { useGSAP } from '@gsap/react';
-import anime from 'animejs';
+import gsap from 'gsap';
 import { JSX } from 'react';
 import './styles.css';
 
 export const Landing = (): JSX.Element => {
   useGSAP(() => {
-    // gsap.from('.split-landing', {
-    //   y: 100,
-    //   stagger: 0.5,
-    //   delay: 2.5,
-    //   duration: 5,
-    //   ease: 'power4.inOut',
-    // });
-    // // avoid ssr flicker
-    // gsap.to('#landing', {
-    //   duration: 1,
-    //   ease: 'power4.inOut',
-    //   opacity: 1,
-    // });
-
-    anime.timeline({ loop: false }).add({
-      targets: '.split-landing',
-      opacity: [0, 1],
-      translateZ: 0,
-      translateY: [100, 0],
-      easing: 'easeOutExpo',
-      duration: 2000,
-      delay: anime.stagger(300, { start: 5000 }),
-    });
+    gsap.fromTo(
+      '.landing-text',
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 2,
+        ease: 'expo.out',
+        delay: 5.5,
+        stagger: { each: 0.3 },
+      }
+    );
   }, []);
 
   return (
     <section id="landing">
       <div className="reveal-overflow">
-        <h5 className="split-landing">{"Hi, i'm Mehdi."}</h5>
+        <h5 className="landing-text">{"Hi, i'm Mehdi."}</h5>
       </div>
       <div className="reveal-overflow">
-        <h1 id="typing-effect" className="split-landing">
+        <h1 id="typing-effect" className="landing-text">
           A software engineer
         </h1>
       </div>
