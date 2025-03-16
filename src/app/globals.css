@@ -1,15 +1,21 @@
-@import './nord.css';
+@import "./nord.css";
 
-:root {  
-  font-family: Departure Mono, monospace;
+:root {
+  font-family:
+    Departure Mono,
+    monospace;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   --white: #ffffff;
-  --bg: var(--nord3);
+  --bg: #000000;
   --fg: var(--white);
   color: var(--fg);
+}
+* {
+  -webkit-font-smoothing: none; /* Safari/Chrome */
+  -moz-osx-font-smoothing: grayscale; /* Firefox on MacOS */
 }
 
 a {
@@ -34,8 +40,6 @@ button {
   font-family: Departure, Arial, Helvetica, sans-serif;
 }
 
-
-
 html,
 body {
   max-width: 100vw;
@@ -57,7 +61,7 @@ body {
 }
 
 h1 {
-  font-size: 3.5rem; /* Augmentation de 3rem à 3.5rem */
+  font-size: 4rem; /* Augmentation de 3rem à 3.5rem */
 }
 
 h2 {
@@ -87,25 +91,20 @@ h6 {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--nord1); 
+  background: var(--nord1);
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--white); 
+  background: var(--white);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-
 }
-
 
 /* quand on selectionne du texte */
 ::selection {
   background: var(--fg);
   color: var(--bg);
 }
-
-
-

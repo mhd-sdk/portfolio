@@ -6,6 +6,7 @@ import { default as LenisLib } from '@studio-freight/lenis';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useTheme } from 'next-themes';
 import { usePathname } from 'next/navigation';
+import router from 'next/router';
 import { About } from './components/About/About';
 import { Landing } from './components/Landing/Landing';
 import { Navbar } from './components/Navbar/Navbar';
@@ -19,13 +20,26 @@ export const Home = (): JSX.Element => {
   const pathname = usePathname();
 
   useEffect(() => {
-    const lenis = new LenisLib();
+    const lenis = new LenisLib({
+      duration: 3,
+    });
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
   }, []);
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      window.scrollTo(0, 0);
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router]);
 
   return (
     <>

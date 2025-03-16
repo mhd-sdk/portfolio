@@ -7,9 +7,9 @@ import { JSX } from 'react';
 import { NavLink } from '../NavLink/NavLink';
 import './styles.css';
 
-interface Props {}
+interface Props { }
 
-export const Navbar = ({}: Props): JSX.Element => {
+export const Navbar = ({ }: Props): JSX.Element => {
   const pathname = usePathname();
 
   const isActive = (to: string) => pathname === to;
@@ -39,11 +39,10 @@ export const Navbar = ({}: Props): JSX.Element => {
       translateZ: 0,
       translateY: [100, 0],
       easing: 'easeOutExpo',
-      duration: 1500,
-      delay: anime.stagger(500, { start: 5000 }),
+      duration: 2500,
+      delay: 4700,
     });
   }, []);
-
   return (
     <nav style={{ zIndex: 1 }} id="navbar">
       <ul id="navbar-list">

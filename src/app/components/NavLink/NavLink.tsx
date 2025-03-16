@@ -49,7 +49,7 @@ export const NavLink = ({ href, onNavigate, text, isActive }: Props): JSX.Elemen
             }
           }
 
-          iteration += 1 / 3;
+          iteration += 1 / 10;
         }, 20);
       };
     }

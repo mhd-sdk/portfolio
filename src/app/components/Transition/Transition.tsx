@@ -14,7 +14,7 @@ export const Transition = () => {
   const getTransitionTitle = () => {
     switch (pathname) {
       case '/':
-        return 'Mehdi';
+        return 'Home';
       case '/projects':
         return 'Projects';
       case '/contact':
