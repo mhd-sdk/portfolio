@@ -3,12 +3,11 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import { JSX, useEffect, useRef } from 'react';
 import SplitType from 'split-type';
 import './styles.css';
-import { Cube } from '../Cube/Cube';
+import AsciiCube from '../AsciiCube/AsciiCube';
 export const About = (): JSX.Element => {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLHeadingElement>(null);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -77,7 +76,7 @@ export const About = (): JSX.Element => {
   }, []);
   return (
     <section id="about" ref={sectionRef}>
-      <Cube />
+      <AsciiCube />
       <div id="about-content">
         <div className="content-wrapper">
           <div className="title-container">
