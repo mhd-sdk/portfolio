@@ -21,7 +21,7 @@ export const Home = (): JSX.Element => {
 
   useEffect(() => {
     const lenis = new LenisLib({
-      duration: 3,
+      duration: 2,
     });
     function raf(time: number) {
       lenis.raf(time);

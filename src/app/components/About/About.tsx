@@ -29,7 +29,7 @@ export const About = (): JSX.Element => {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: 'top top',
-        end: '+=100%',
+        end: '+=200%',
         pinSpacing: true,
         scrub: true,
       },
@@ -41,13 +41,13 @@ export const About = (): JSX.Element => {
       y: 0,
       duration: 9,
     });
-    headerTl.to({}, { duration: 5 }); // Adjust the duration (1 second in this example)
+    headerTl.to({}, { duration: 5 });
 
     const descriptionTl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
         start: 'top top',
-        end: '+=100%',
+        end: '+=200%',
         pin: true,
         pinSpacing: true,
         scrub: 1,
@@ -61,7 +61,7 @@ export const About = (): JSX.Element => {
       stagger: 0.3,
       ease: 'power2.out',
     });
-    descriptionTl.to({}, { duration: 5 }); // Adjust the duration (1 second in this example)
+    descriptionTl.to({}, { duration: 2 });
 
     return () => {
       if (ScrollTrigger) {
@@ -76,8 +76,17 @@ export const About = (): JSX.Element => {
   }, []);
   return (
     <section id="about" ref={sectionRef}>
-      <AsciiCube />
       <div id="about-content">
+        <div
+          className="ascii-effect-container"
+          style={{
+            position: 'relative',
+            width: '40%',
+            height: '100%',
+          }}
+        >
+          <AsciiCube />
+        </div>
         <div className="content-wrapper">
           <div className="title-container">
             <h1 id="about-title-header" ref={headerRef}>
@@ -87,7 +96,8 @@ export const About = (): JSX.Element => {
           <div className="description-container">
             <p className="description-text" ref={descriptionRef}>
               Passionate about software development and new technologies,
-              <br /> I specialize in building reactive and high-performance applications. I am currently working as a Fullstack Developer at Fives
+              <br /> I specialize in building reactive and high-performance applications.
+              <br /> I am currently working as a Fullstack Developer at Fives
               CortX in Vénissieux, France, where I contribute to the development of modern software solutions for Industry 4.0.
               <br /> In my free time, I enjoy keeping up with the latest tech trends, learning new technologies and watching animes.
             </p>

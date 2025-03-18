@@ -1,9 +1,9 @@
 import { css } from '@emotion/css';
 import { gsap } from 'gsap';
-import { useLayoutEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 
 export const WannaWorkWithMe = (): JSX.Element => {
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap.to('#banderolle1', {
       translateX: -2500,
       scrollTrigger: {
@@ -51,7 +51,6 @@ export const WannaWorkWithMe = (): JSX.Element => {
         id="banderolle2"
         style={{
           fontSize: '2rem',
-          // no wrap
           textWrap: 'nowrap',
         }}
       >

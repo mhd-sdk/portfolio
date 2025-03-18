@@ -1,9 +1,10 @@
 'use client';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { JSX, useRef } from 'react';
 import SplitType from 'split-type';
 import './styles.css';
+import React, { useEffect, useRef, useState } from 'react';
+import AsciiLanding from '../AsciiLanding/AsciiLanding';
 
 export const Landing = (): JSX.Element => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -37,13 +38,14 @@ export const Landing = (): JSX.Element => {
   return (
     <section id="landing" ref={sectionRef}>
       <div className="reveal-overflow">
-        <h5 className="landing-text">{"Hi, i'm Mehdi."}</h5>
+        <h5 className="landing-text">Mehdi Seddik</h5>
       </div>
       <div className="reveal-overflow">
         <h1 id="typing-effect" className="landing-text">
-          A fullstack developer
+          Software Developer
         </h1>
       </div>
+      <AsciiLanding />
     </section>
   );
 };
