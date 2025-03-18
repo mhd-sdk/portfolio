@@ -48,12 +48,8 @@ const AsciiCube: React.FC = () => {
     scene.add(pointLight2);
 
     // Création du cube à la place de la sphère
-    const cube = new THREE.Mesh(
-      new THREE.BoxGeometry(200, 200, 200),
-      new THREE.MeshPhongMaterial({ flatShading: true })
-    );
+    const cube = new THREE.Mesh(new THREE.BoxGeometry(200, 200, 200), new THREE.MeshPhongMaterial({ flatShading: true }));
     scene.add(cube);
-
 
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(width, height);

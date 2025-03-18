@@ -1,10 +1,9 @@
 'use client';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { JSX, useRef } from 'react';
 import SplitType from 'split-type';
 import './styles.css';
-import React, { useEffect, useRef, useState } from 'react';
-import AsciiLanding from '../AsciiLanding/AsciiLanding';
 
 export const Landing = (): JSX.Element => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -45,7 +44,6 @@ export const Landing = (): JSX.Element => {
           Software Developer
         </h1>
       </div>
-      <AsciiLanding />
     </section>
   );
 };
