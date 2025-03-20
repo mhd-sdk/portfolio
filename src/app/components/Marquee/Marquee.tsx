@@ -1,8 +1,8 @@
 import { css } from '@emotion/css';
 import { gsap } from 'gsap';
-import { useEffect, useLayoutEffect } from 'react';
+import { JSX, useEffect } from 'react';
 
-export const WannaWorkWithMe = (): JSX.Element => {
+export const Marquee = (): JSX.Element => {
   useEffect(() => {
     gsap.to('#banderolle1', {
       translateX: -2500,
@@ -32,7 +32,6 @@ export const WannaWorkWithMe = (): JSX.Element => {
         id="banderolle1"
         style={{
           fontSize: '2rem',
-          // no wrap
           textWrap: 'nowrap',
         }}
       >

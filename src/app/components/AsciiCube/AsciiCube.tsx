@@ -1,3 +1,5 @@
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { AsciiEffect } from 'three/examples/jsm/Addons.js';
@@ -7,7 +9,33 @@ const AsciiCube: React.FC = () => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    
     if (!containerRef.current) return;
+
+    // Animation initiale - masquer le conteneur
+    gsap.set(containerRef.current, {
+      opacity: 0,
+      x: -50,
+    });
+
+    // Animation au scroll
+    const cubeTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top top',
+        end: '+=200%',
+        scrub: 1,
+      },
+    });
+
+    cubeTl.to(containerRef.current, {
+      opacity: 1,
+      x: 0,
+      duration: 9,
+      ease: 'power2.out',
+    });
+    cubeTl.to({}, { duration: 5 });
 
     const updateDimensions = () => {
       if (containerRef.current) {
@@ -21,6 +49,10 @@ const AsciiCube: React.FC = () => {
     resizeObserver.observe(containerRef.current);
 
     return () => {
+      if (ScrollTrigger) {
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill(false));
+      }
+      cubeTl.kill();
       if (containerRef.current) {
         resizeObserver.unobserve(containerRef.current);
       }

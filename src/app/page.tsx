@@ -9,9 +9,9 @@ import { usePathname } from 'next/navigation';
 import router from 'next/router';
 import { About } from './components/About/About';
 import { Landing } from './components/Landing/Landing';
+import { Marquee } from './components/Marquee/Marquee';
 import { Navbar } from './components/Navbar/Navbar';
 import { Transition } from './components/Transition/Transition';
-import { WannaWorkWithMe } from './components/WorkWithMe/WannaWorkWithMe';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,7 +46,7 @@ export const Home = (): JSX.Element => {
       <Navbar />
       <Landing />
       <About />
-      <WannaWorkWithMe />
+      <Marquee />
       {/* <Timeline />
           <section
             id="section4"
