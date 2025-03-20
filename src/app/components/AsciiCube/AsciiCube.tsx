@@ -10,7 +10,7 @@ const AsciiCube: React.FC = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     if (!containerRef.current) return;
 
     // Animation initiale - masquer le conteneur
@@ -25,14 +25,15 @@ const AsciiCube: React.FC = () => {
         trigger: containerRef.current,
         start: 'top top',
         end: '+=200%',
-        scrub: 1,
+        scrub: false,
+        pin: false,
       },
     });
 
     cubeTl.to(containerRef.current, {
       opacity: 1,
       x: 0,
-      duration: 9,
+      duration: 3,
       ease: 'power2.out',
     });
     cubeTl.to({}, { duration: 5 });

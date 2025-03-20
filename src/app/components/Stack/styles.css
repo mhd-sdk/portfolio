@@ -1,0 +1,59 @@
+@import "../../globals.css";
+
+#stack-container {
+  width: 40%;
+  height: 70vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#stack-scene {
+  width: "100%";
+  height: "100%";
+  border: "1px solid #ccc";
+}
+
+#stack-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 5rem;
+  box-sizing: border-box;
+}
+
+#stack-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.stack-content-wrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.stack-title-container {
+  margin-bottom: 2rem;
+}
+
+#stack-title-header {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.stack-description-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.stack-description-text .line {
+  overflow: hidden;
+  display: block;
+}

@@ -29,9 +29,9 @@ export const About = (): JSX.Element => {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: 'top top',
-        end: '+=200%',
+        end: '+=100%',
         pinSpacing: true,
-        scrub: true,
+        scrub: false,
       },
     });
 
@@ -47,10 +47,10 @@ export const About = (): JSX.Element => {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: 'top top',
-        end: '+=200%',
+        end: '+=100%',
         pin: true,
         pinSpacing: true,
-        scrub: 1,
+        scrub: false,
       },
     });
 
@@ -80,7 +80,7 @@ export const About = (): JSX.Element => {
         <div
           className="ascii-effect-container"
           style={{
-            position: 'relative',
+            //position: 'relative',
             width: '40%',
             height: '100%',
           }}

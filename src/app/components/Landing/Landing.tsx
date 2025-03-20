@@ -27,7 +27,7 @@ export const Landing = (): JSX.Element => {
         ease: 'expo.out',
         delay: 4,
         stagger: {
-          each: 0.05,
+          each: 0.55,
           from: 'start',
         },
       }
