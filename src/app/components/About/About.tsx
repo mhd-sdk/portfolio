@@ -2,8 +2,8 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { JSX, useEffect, useRef } from 'react';
 import SplitType from 'split-type';
-import './styles.css';
 import AsciiCube from '../AsciiCube/AsciiCube';
+import './styles.css';
 export const About = (): JSX.Element => {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLHeadingElement>(null);
@@ -97,8 +97,8 @@ export const About = (): JSX.Element => {
             <p className="description-text" ref={descriptionRef}>
               Passionate about software development and new technologies,
               <br /> I specialize in building reactive and high-performance applications.
-              <br /> I am currently working as a Fullstack Developer at Fives
-              CortX in Vénissieux, France, where I contribute to the development of modern software solutions for Industry 4.0.
+              <br /> I am currently working as a Fullstack Developer at Fives CortX in Vénissieux, France, where I contribute to the development of
+              modern software solutions for Industry 4.0.
               <br /> In my free time, I enjoy keeping up with the latest tech trends, learning new technologies and watching animes.
             </p>
           </div>
