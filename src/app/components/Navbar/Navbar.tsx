@@ -6,10 +6,9 @@ import { usePathname } from 'next/navigation';
 import { JSX } from 'react';
 import { NavLink } from '../NavLink/NavLink';
 import './styles.css';
+import { useTheme } from 'next-themes';
 
-interface Props { }
-
-export const Navbar = ({ }: Props): JSX.Element => {
+export const Navbar = (): JSX.Element => {
   const pathname = usePathname();
 
   const isActive = (to: string) => pathname === to;
@@ -26,7 +25,7 @@ export const Navbar = ({ }: Props): JSX.Element => {
       .to('.panel', {
         y: '0%',
         duration: 1.2,
-        stagger: 0.1, // Stagger effect between each panel
+        stagger: 0.1,
         ease: 'power4.inOut',
       });
     navigateWithDelay(to);
@@ -43,15 +42,22 @@ export const Navbar = ({ }: Props): JSX.Element => {
       delay: 4700,
     });
   }, []);
+  const { theme, setTheme } = useTheme();
+
   return (
-    <nav style={{ zIndex: 1 }} id="navbar">
-      <ul id="navbar-list">
-        <NavLink isActive={isActive('/')} href="Home" onNavigate={() => handleNavigate('/')} text="Home" />
-        <div className="link-divider animate-nav">/</div>
-        <NavLink isActive={isActive('/projects')} href="Projects" onNavigate={() => handleNavigate('/projects')} text="Projects" />
-        <div className="link-divider animate-nav">/</div>
-        <NavLink isActive={isActive('/contact')} href="Contact" onNavigate={() => handleNavigate('/contact')} text="Contact" />
-      </ul>
-    </nav>
+    <>
+      <nav id="navbar" className="absolute top-0 left-1/2 -translate-x-1/2 flex  justify-center justify-between gap-4 p-4 text-white/60 w-[1000px]">
+        <div className="flex-1">
+          {theme === 'dark' ? <button onClick={() => setTheme('light')}></button> : <button onClick={() => setTheme('dark')}> </button>}
+        </div>
+        <ul id="navbar-list">
+          <NavLink isActive={isActive('/')} href="Home" onNavigate={() => handleNavigate('/')} text="Home" />
+          <div className="link-divider animate-nav">/</div>
+          <NavLink isActive={isActive('/projects')} href="Projects" onNavigate={() => handleNavigate('/projects')} text="Projects" />
+          <div className="link-divider animate-nav">/</div>
+          <NavLink isActive={isActive('/contact')} href="Contact" onNavigate={() => handleNavigate('/contact')} text="Contact" />
+        </ul>
+      </nav>
+    </>
   );
 };

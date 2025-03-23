@@ -20,7 +20,8 @@ export default function RootLayout({
         <title>Mehdi Seddik</title>
       </Head>
       <body>
-      <ThemeProvider>{children}</ThemeProvider></body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

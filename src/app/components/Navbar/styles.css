@@ -1,13 +1,4 @@
 @import "../../globals.css";
-#navbar {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1rem 0rem 1rem;
-  position: absolute;
-  right: 0;
-  color: rgba(255, 255, 255, 0.567);
-}
 
 #navbar-list {
   display: flex;

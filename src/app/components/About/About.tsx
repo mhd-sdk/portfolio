@@ -90,7 +90,7 @@ export const About = (): JSX.Element => {
   }, []);
 
   return (
-    <section id="about-section" ref={sectionRef} className="h-screen w-full flex flex-row items-center relative gap-18 pl-36 pr-36">
+    <section id="about-section" ref={sectionRef} className="h-screen w-full flex flex-row items-center relative gap-18 pl-36 pr-36 ">
       <div className="w-4/10 h-full flex flex-col items-end justify-start pt-24 pb-24">
         <Image src={photo.src} alt="Me" className="object-cover" width={500} height={500} priority />
       </div>
@@ -103,12 +103,11 @@ export const About = (): JSX.Element => {
         </div>
         <div>
           <p className="text-[1.4rem] leading-[1.6]" ref={descriptionRef}>
-            Passionate about software development and computer science, I specialize in building reactive and high-performance applications.
-            <br />
-            I am currently working as a Fullstack Developer at Fives CortX in France, where I contribute to the development of modern software
-            solutions for Industry 4.0.
-            <br />
-            Currently learning about Golang, k8 and
+            Passionate about software development and computer science, I specialize in building reactive and high-performance applications. I
+            currently work as a Fullstack Developer at Fives CortX in France, where I contribute to the development of innovative software solutions
+            for Industry 4.0. <br />
+            In my free time, I enjoy learning new technologies and honing my skills. As a tech enthusiast and lifelong learner, I'm always excited to
+            explore emerging trends and advancements in the field.
           </p>
         </div>
       </div>

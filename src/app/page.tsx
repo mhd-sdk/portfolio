@@ -6,11 +6,12 @@ import { default as LenisLib } from '@studio-freight/lenis';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import router from 'next/router';
 import { About } from './components/About/About';
+import Citation from './components/Citation/Citation';
 import { Landing } from './components/Landing/Landing';
+import { Marquee } from './components/Marquee/Marquee';
 import { Navbar } from './components/Navbar/Navbar';
 import { Stack } from './components/Stack/Stack';
 import { Transition } from './components/Transition/Transition';
-import { Marquee } from './components/Marquee/Marquee';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +44,7 @@ export const Home = (): JSX.Element => {
       <Navbar />
       <Landing />
       <About />
+      <Citation />
       <Stack />
       {/* <Timeline /> */}
       <Marquee />

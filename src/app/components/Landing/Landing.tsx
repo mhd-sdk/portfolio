@@ -38,10 +38,10 @@ export const Landing = (): JSX.Element => {
   return (
     <section id="landing" ref={sectionRef} className="h-screen w-screen flex flex-col justify-center items-center">
       <div className="overflow-hidden">
-        <h5 className="landing-text">Mehdi Seddik</h5>
+        <h2 className="landing-text">Mehdi Seddik</h2>
       </div>
       <div className="overflow-hidden">
-        <h1 id="typing-effect" className="landing-text font-bold">
+        <h1 id="typing-effect" className="landing-text font-bold text-8xl">
           SOFTWARE DEVELOPER
         </h1>
       </div>

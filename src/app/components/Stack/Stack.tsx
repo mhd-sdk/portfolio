@@ -339,41 +339,21 @@ export const Stack: React.FC<FallingSpritesProps> = ({ backgroundColor = 'var(--
   }, []);
 
   return (
-    <section 
-      id="stack-section" 
-      className="h-screen w-full flex flex-row items-center relative gap-20 px-36" 
-      ref={sectionRef}
-    >
+    <section id="stack-section" className="h-screen w-full flex flex-row items-center relative gap-20 px-66" ref={sectionRef}>
       <div className="w-1/2 h-full flex flex-col">
         <div className="mb-8">
-          <h1 
-            id="stack-title-header" 
-            ref={headerRef}
-            className="text-5xl m-0"
-          >
-            My stack
+          <h1 id="stack-title-header" ref={headerRef} className="text-5xl m-0">
+            Need expertise in specific technologies?
           </h1>
         </div>
         <div>
-          <p 
-            className="text-[1.4rem] leading-[1.6]" 
-            ref={descriptionRef}
-          >
-            I like to stay up to date with the latest technologies.
-            <br />I always enjoy learning new things and experimenting with new tools.
+          <p className="text-[1.4rem] leading-[1.6]" ref={descriptionRef}>
+            I use a variety of technologies, and i'alway open to learn new ones.
           </p>
         </div>
       </div>
-      <div 
-        ref={containerRef} 
-        id="stack-container"
-        className="w-1/2 h-full overflow-hidden z-10"
-      >
-        <div
-          id="stack-scene"
-          ref={sceneRef}
-          className="w-full h-full"
-        />
+      <div ref={containerRef} id="stack-container" className="w-1/2 h-full overflow-hidden z-10">
+        <div id="stack-scene" ref={sceneRef} className="w-full h-full" />
       </div>
     </section>
   );
