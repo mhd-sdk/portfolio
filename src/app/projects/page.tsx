@@ -7,7 +7,6 @@ export default function Page() {
   return (
     <>
       <Navbar />
-      <div>Projects</div>;
       <Transition />
     </>
   );

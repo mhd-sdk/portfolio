@@ -1,32 +1,34 @@
 'use client';
+import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap';
-import { JSX, useEffect } from 'react';
-
-import { default as LenisLib } from '@studio-freight/lenis';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import router from 'next/router';
+import { useEffect, useState } from 'react';
 import { About } from './components/About/About';
 import Citation from './components/Citation/Citation';
 import { Landing } from './components/Landing/Landing';
-import { Marquee } from './components/Marquee/Marquee';
 import { Navbar } from './components/Navbar/Navbar';
+import PreLaunch from './components/PreLaunch/PreLaunch';
 import { Stack } from './components/Stack/Stack';
 import { Transition } from './components/Transition/Transition';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const Home = (): JSX.Element => {
+const Home = () => {
+  const [isConfirmed, setIsConfirmed] = useState(false);
+
   useEffect(() => {
-    const lenis = new LenisLib({
-      duration: 2,
+    const lenis = new Lenis({
+      duration: 1,
     });
 
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
+
     requestAnimationFrame(raf);
-  }, []);
+  }, [isConfirmed]);
 
   useEffect(() => {
     const handleRouteChange = () => {
@@ -41,15 +43,18 @@ export const Home = (): JSX.Element => {
 
   return (
     <>
-      <Navbar />
-      <Landing />
-      <About />
-      <Citation />
-      <Stack />
-      {/* <Timeline /> */}
-      <Marquee />
-
-      <Transition />
+      {isConfirmed ? (
+        <>
+          <Navbar />
+          <Landing />
+          <About />
+          <Citation />
+          <Stack />
+          <Transition />
+        </>
+      ) : (
+        <PreLaunch onConfirm={() => setIsConfirmed(true)} />
+      )}
     </>
   );
 };

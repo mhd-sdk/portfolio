@@ -38,7 +38,7 @@
   height: 100%;
   flex: 1; /* Equal width for all panels */
   position: relative; /* Changed from absolute */
-  background: var(--fg); /* Use the base component color */
+  background: var(--bg2); /* Use the base component color */
 }
 
 /* Container for the panels */
@@ -63,7 +63,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: var(--fg);
   z-index: 205; /* Make sure text is above all panels */
   opacity: 0;
   overflow: hidden;

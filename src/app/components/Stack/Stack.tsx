@@ -74,63 +74,53 @@ export const Stack: React.FC<FallingSpritesProps> = ({ backgroundColor = 'var(--
     });
     renderRef.current = render;
 
-    const wallThickness = 10; // Visible wall thickness
-    const collisionThickness = 500; // Thicker invisible collision body
+    const wallThickness = 10;
+    const collisionThickness = 500;
 
-    // Create composite walls to prevent tunneling
     const floor = Matter.Composite.create();
     const leftWall = Matter.Composite.create();
     const rightWall = Matter.Composite.create();
 
-    // Visible floor
     const visibleFloor = Matter.Bodies.rectangle(width / 2, height, width, wallThickness, {
       isStatic: true,
-      render: { fillStyle: 'black' },
+      render: { fillStyle: 'transparent' },
     });
 
-    // Invisible thicker collision floor
     const collisionFloor = Matter.Bodies.rectangle(width / 2, height + (collisionThickness - wallThickness) / 2, width, collisionThickness, {
       isStatic: true,
-      render: { fillStyle: 'black', opacity: 0 },
+      render: { fillStyle: 'transparent', opacity: 0 },
       collisionFilter: { group: 1 },
     });
 
-    // Visible left wall
     const visibleLeftWall = Matter.Bodies.rectangle(0, height / 2, wallThickness, height, {
       isStatic: true,
-      render: { fillStyle: 'white' },
+      render: { fillStyle: 'transparent' },
     });
 
-    // Invisible thicker collision left wall
     const collisionLeftWall = Matter.Bodies.rectangle(-(collisionThickness - wallThickness) / 2, height / 2, collisionThickness, height, {
       isStatic: true,
-      render: { fillStyle: 'white', opacity: 0 },
+      render: { fillStyle: 'transparent', opacity: 0 },
       collisionFilter: { group: 1 },
     });
 
-    // Visible right wall
     const visibleRightWall = Matter.Bodies.rectangle(width, height / 2, wallThickness, height, {
       isStatic: true,
-      render: { fillStyle: 'white' },
+      render: { fillStyle: 'transparent' },
     });
 
-    // Invisible thicker collision right wall
     const collisionRightWall = Matter.Bodies.rectangle(width + (collisionThickness - wallThickness) / 2, height / 2, collisionThickness, height, {
       isStatic: true,
-      render: { fillStyle: 'white', opacity: 0 },
+      render: { fillStyle: 'transparent', opacity: 0 },
       collisionFilter: { group: 1 },
     });
 
-    // Add bodies to composites
     Matter.Composite.add(floor, [visibleFloor, collisionFloor]);
     Matter.Composite.add(leftWall, [visibleLeftWall, collisionLeftWall]);
     Matter.Composite.add(rightWall, [visibleRightWall, collisionRightWall]);
 
-    // Add composites to world
     Matter.Composite.add(engine.world, [floor, leftWall, rightWall]);
 
-    // Créer les sprites qui tombent avec différentes formes
-    const y = Math.random() * -500 - 20; // Au-dessus de la zone visible
+    const y = Math.random() * -500 - 20;
     const sprites: Matter.Body[] = [
       Matter.Bodies.rectangle(Math.floor(Math.random() * (width - 0 + 1)), y, 70, 70, {
         restitution: 0.3,
@@ -226,7 +216,6 @@ export const Stack: React.FC<FallingSpritesProps> = ({ backgroundColor = 'var(--
       Matter.Body.setAngularVelocity(sprite, (Math.random() - 0.5) * 0.05);
     });
 
-    // Ajouter les sprites au monde avec un petit délai pour les faire tomber progressivement
     const addSpritesWithDelay = () => {
       sprites.forEach((sprite) => {
         setTimeout(() => {
@@ -235,7 +224,6 @@ export const Stack: React.FC<FallingSpritesProps> = ({ backgroundColor = 'var(--
       });
     };
 
-    // add mouse control
     const mouse = Mouse.create(render.canvas),
       mouseConstraint = MouseConstraint.create(engine, {
         mouse: mouse,
@@ -249,9 +237,7 @@ export const Stack: React.FC<FallingSpritesProps> = ({ backgroundColor = 'var(--
 
     Composite.add(engine.world, mouseConstraint);
 
-    // keep the mouse in sync with rendering
     render.mouse = mouse;
-    // Démarrer le moteur et le renderer
     Matter.Render.run(render);
     const runner = Matter.Runner.create();
     Matter.Runner.run(runner, engine);
@@ -339,21 +325,25 @@ export const Stack: React.FC<FallingSpritesProps> = ({ backgroundColor = 'var(--
   }, []);
 
   return (
-    <section id="stack-section" className="h-screen w-full flex flex-row items-center relative gap-20 px-66" ref={sectionRef}>
-      <div className="w-1/2 h-full flex flex-col">
-        <div className="mb-8">
-          <h1 id="stack-title-header" ref={headerRef} className="text-5xl m-0">
-            Need expertise in specific technologies?
-          </h1>
-        </div>
-        <div>
-          <p className="text-[1.4rem] leading-[1.6]" ref={descriptionRef}>
-            I use a variety of technologies, and i'alway open to learn new ones.
-          </p>
-        </div>
-      </div>
-      <div ref={containerRef} id="stack-container" className="w-1/2 h-full overflow-hidden z-10">
+    <section 
+      id="stack-section" 
+      className="h-screen w-full flex items-center justify-center relative"
+      ref={sectionRef}
+    >
+      <div 
+        ref={containerRef} 
+        id="stack-container" 
+        className="absolute inset-0 overflow-hidden z-10"
+      >
         <div id="stack-scene" ref={sceneRef} className="w-full h-full" />
+      </div>
+      <div className="absolute z-20 text-center">
+        <h1 id="stack-title-header" ref={headerRef} className="text-5xl m-0 text-white">Technologies</h1>
+        <p className="text-[1.4rem] leading-[1.6] text-white">
+          I use a variety of technologies, and I'm always open to learn new ones.
+          <br />
+          At the moment, I'm focusing on React, TypeScript, and Golang.
+        </p>
       </div>
     </section>
   );

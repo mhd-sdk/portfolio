@@ -5,14 +5,14 @@ import { JSX, useEffect, useRef } from 'react';
 import SplitType from 'split-type';
 import photo from '../../../../public/my-picture.jpg';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export const About = (): JSX.Element => {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLHeadingElement>(null);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     if (!headerRef.current || !descriptionRef.current || !sectionRef.current) return;
 
     const descriptionText = new SplitType(descriptionRef.current, { types: 'lines' });

@@ -11,6 +11,8 @@
 
   --fg: #3d3d3d;
   --bg: #eeeeee;
+  --accent: #cc241d;
+  --bg2: #1d2021;
   color: var(--fg);
 }
 
@@ -22,8 +24,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --bg: #3d3d3d;
-  --fg: #eeeeee;
+  --bg: #3c3836;
+  --fg: #ffebbd;
   color: var(--fg);
 }
 

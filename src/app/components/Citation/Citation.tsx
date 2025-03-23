@@ -42,7 +42,7 @@ const Citation: React.FC = () => {
   return (
     <section ref={sectionRef} className="text-2xl font-bold p-4 text-9xl h-screen w-screen flex flex-row items-center relative pl-36 pr-36">
       <div ref={textRef}>
-        Talk is cheap.
+        Talk is cheap
         <br /> Show me the Code.
       </div>
     </section>
