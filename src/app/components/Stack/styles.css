@@ -1,55 +1,58 @@
 @import "../../globals.css";
 
+#stack-section {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 9rem 5rem;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+
 #stack-container {
-  width: 40%;
-  height: 70vh;
-  position: relative;
+  width: 50%;
+  height: 100%;
   overflow: hidden;
+  z-index: 100;
 }
 
 #stack-scene {
-  width: "100%";
-  height: "100%";
-  border: "1px solid #ccc";
-}
-
-#stack-section {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 5rem;
-  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
 #stack-content {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row;
-  gap: 20px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
 .stack-content-wrapper {
   width: 50%;
+  height: 100% !important;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 100%;
 }
 
-.stack-title-container {
+.stack-title-overflow {
   margin-bottom: 2rem;
 }
 
 #stack-title-header {
-  font-size: 3rem;
+  font-size: 5rem;
   margin: 0;
 }
 
 .stack-description-text {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.6;
 }
 

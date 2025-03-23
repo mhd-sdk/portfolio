@@ -1,4 +1,4 @@
-@import url('../../nord.css');
+@import url("../../nord.css");
 
 .section {
   height: 100vh;
@@ -37,7 +37,7 @@
   height: 100%;
   flex: 1; /* Equal width for all panels */
   position: relative; /* Changed from absolute */
-  background: #000000; /* Use the base component color */
+  background: black; /* Use the base component color */
 }
 
 /* Container for the panels */
@@ -50,15 +50,6 @@
   top: 0;
   left: 0;
 }
-
-/* Style for the panels */
-.panel-2 {
-  height: 100%;
-  flex: 1; /* Equal width for all panels */
-  position: relative; /* Changed from absolute */
-  background: #ffffff; /* Use the base component color */
-}
-
 
 .transition-span {
   position: relative; /* Changed from absolute */

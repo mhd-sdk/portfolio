@@ -1,4 +1,5 @@
 @import "./nord.css";
+@import "tailwindcss";
 
 :root {
   font-family:
@@ -8,14 +9,22 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --white: #ffffff;
-  --bg: #000000;
-  --fg: var(--white);
+  --fg: #3d3d3d;
+  --bg: #eeeeee;
   color: var(--fg);
 }
-* {
-  -webkit-font-smoothing: none; /* Safari/Chrome */
-  -moz-osx-font-smoothing: grayscale; /* Firefox on MacOS */
+
+[data-theme="dark"] {
+  font-family:
+    Departure Mono,
+    monospace;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --bg: #000000;
+  --fg: #eeeeee;
+  color: var(--fg);
 }
 
 a {
@@ -52,12 +61,6 @@ body {
   font-family: Departure, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 h1 {

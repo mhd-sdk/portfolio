@@ -68,7 +68,7 @@ export const NavLink = ({ href, onNavigate, text, isActive }: Props): JSX.Elemen
         e.preventDefault();
         handleNavigate(href);
       }}
-      className={(isActive ? 'active-navlink' : '') + ' animate-nav'}
+      className={(isActive ? 'active-navlink' : 'inactive-navlink') + ' animate-nav'}
     >
       {text}
     </a>

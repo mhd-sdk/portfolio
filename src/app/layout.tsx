@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ThemeProvider } from 'next-themes';
 import Head from 'next/head';
 import './globals.css';
 
@@ -18,7 +19,8 @@ export default function RootLayout({
         <script src="https://kit.fontawesome.com/e076d7e5dd.js" crossOrigin="anonymous" async></script>
         <title>Mehdi Seddik</title>
       </Head>
-      <body>{children}</body>
+      <body>
+      <ThemeProvider>{children}</ThemeProvider></body>
     </html>
   );
 }

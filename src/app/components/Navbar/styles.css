@@ -1,4 +1,4 @@
-@import '../../globals.css';
+@import "../../globals.css";
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -17,7 +17,8 @@
   overflow: hidden;
 }
 
-.link-divider{
+.link-divider {
   height: 80%;
+  color: var(--fg);
+  opacity: 0.5 !important;
 }
-

@@ -10,6 +10,7 @@ import { Landing } from './components/Landing/Landing';
 import { Navbar } from './components/Navbar/Navbar';
 import { Stack } from './components/Stack/Stack';
 import { Transition } from './components/Transition/Transition';
+import { Marquee } from './components/Marquee/Marquee';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,7 +45,7 @@ export const Home = (): JSX.Element => {
       <About />
       <Stack />
       {/* <Timeline /> */}
-      {/* <Marquee /> */}
+      <Marquee />
 
       <Transition />
     </>
