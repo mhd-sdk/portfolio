@@ -34,14 +34,22 @@ export const Link = ({ href, text, onClick }: Props) => {
 
     return () => {
       // Nettoyage des écouteurs d'événements
-      buttonRef.current?.removeEventListener('mouseenter', () => {});
-      buttonRef.current?.removeEventListener('mouseleave', () => {});
+      buttonRef.current?.removeEventListener('mouseenter', () => { });
+      buttonRef.current?.removeEventListener('mouseleave', () => { });
     };
   }, []);
 
   return (
-    <div className="flex justify-center items-center cursor-pointer">
-      <a href={href} ref={buttonRef} onClick={onClick} className="relative flex justify-center items-center px-4 py-2">
+    <div ref={buttonRef} className="flex  cursor-pointer">
+      <a
+        href={href}
+        ref={buttonRef}
+        onClick={(e) => {
+          e.preventDefault();
+          onClick?.();
+        }}
+        className="relative flex justify-center items-center px-4 py-2"
+      >
         <div ref={overlayRef} className="absolute inset-0 bg-current"></div>
         <span ref={textRef} className="relative z-10 flex items-center">
           {text}

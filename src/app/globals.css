@@ -24,10 +24,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --bg: #3d3d3d;
   --fg: #eeeeee;
-  --fg2: #ffffff;
-  --bg2:rgb(82, 82, 82);
+  --bg: #18191a;
+  --fg2: #18191a;
+  --bg2: #242526;
   color: var(--fg);
 }
 
