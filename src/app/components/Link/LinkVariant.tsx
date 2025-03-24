@@ -7,7 +7,7 @@ interface Props {
   text: string;
 }
 
-export const Link = ({ href, text, onClick }: Props) => {
+export const LinkVariant = ({ href, text, onClick }: Props) => {
   const buttonRef = useRef<HTMLAnchorElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
@@ -21,15 +21,15 @@ export const Link = ({ href, text, onClick }: Props) => {
     // Animation au hover
     buttonRef.current?.addEventListener('mouseenter', () => {
       gsap.to(overlayRef.current, { width: '100%', duration: 0.2, ease: 'power2.inOut' });
-      gsap.to(textRef.current, { color: 'var(--bg)', duration: 0.2 });
+      gsap.to(textRef.current, { color: 'var(--fg)', duration: 0.2 });
       gsap.to(arrowRef.current, { y: 0, opacity: 1, duration: 0.2 });
     });
 
     // Animation au hover out
     buttonRef.current?.addEventListener('mouseleave', () => {
-      gsap.to(overlayRef.current, { width: 0, duration: 0.5, ease: 'power2.inOut' });
-      gsap.to(textRef.current, { color: 'var(--fg)', duration: 0.3 });
-      gsap.to(arrowRef.current, { y: 20, opacity: 0, duration: 0.3 });
+      gsap.to(overlayRef.current, { width: 0, duration: 0.2, ease: 'power2.inOut' });
+      gsap.to(textRef.current, { color: 'var(--bg)', duration: 0.1, delay: 0.2 });
+      gsap.to(arrowRef.current, { y: 20, opacity: 0, duration: 0.2 });
     });
 
     return () => {

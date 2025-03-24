@@ -14,7 +14,7 @@ export const Landing = (): JSX.Element => {
       new SplitType('.overflow-hidden h5', { types: 'chars', charClass: 'char-landing' });
     }
 
-    // Animation for text elements with stagger effect
+
     gsap.fromTo(
       '.landing-text',
       {

@@ -94,7 +94,6 @@ export const About = (): JSX.Element => {
       <div className="w-4/10 h-full flex flex-col items-end justify-start pt-24 pb-24">
         <Image src={photo.src} alt="Me" className="object-cover" width={500} height={500} priority />
       </div>
-
       <div className="w-1/2 h-full flex flex-col gap-8 pt-24 pb-24">
         <div className="mb-2">
           <h1 id="about-title-header" ref={headerRef} className="text-5xl m-0">
