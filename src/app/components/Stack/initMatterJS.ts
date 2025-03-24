@@ -171,5 +171,5 @@ export const initMatterJS = ({ containerRef, sceneRef, engineRef, renderRef, run
 
     Matter.Composite.add(ceilingComposite, [visibleCeiling, collisionCeiling]);
     Matter.Composite.add(engine.world, ceilingComposite);
-  }, 6000);
+  }, 4100);
 };

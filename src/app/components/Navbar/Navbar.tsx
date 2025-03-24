@@ -7,9 +7,8 @@ import { useTheme } from 'next-themes';
 import { usePathname } from 'next/navigation';
 import { JSX } from 'react';
 import { NavLink } from '../NavLink/NavLink';
-
-import Moon from 'pixelarticons/svg/moon.svg';
-import Sun from 'pixelarticons/svg/sun.svg';
+import { Moon } from '../Svg/Moon';
+import { Sun } from '../Svg/Sun';
 
 export const Navbar = (): JSX.Element => {
   const pathname = usePathname();
