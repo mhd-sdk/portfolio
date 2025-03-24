@@ -1,3 +1,4 @@
+'use client';
 import { navigateWithDelay } from '@/app/utils/navigateWithDelay';
 import { useGSAP } from '@gsap/react';
 import anime from 'animejs';

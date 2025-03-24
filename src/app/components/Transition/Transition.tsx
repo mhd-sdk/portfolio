@@ -71,7 +71,7 @@ export const Transition = () => {
         display: 'none',
         duration: 0,
       });
-  }, [pathname]);
+  }, [getTransitionTitle, pathname]);
 
   return (
     <div className="privacy">

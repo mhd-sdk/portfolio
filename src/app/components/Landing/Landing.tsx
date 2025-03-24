@@ -14,7 +14,6 @@ export const Landing = (): JSX.Element => {
       new SplitType('.overflow-hidden h5', { types: 'chars', charClass: 'char-landing' });
     }
 
-
     gsap.fromTo(
       '.landing-text',
       {

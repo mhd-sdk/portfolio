@@ -8,34 +8,37 @@ interface Props {
 }
 
 export const Link = ({ href, text, onClick }: Props) => {
-  const buttonRef = useRef<HTMLAnchorElement>(null);
+  const buttonRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
+  const anchorRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
+    const button = buttonRef.current;
+
     // Configuration initiale
     gsap.set(overlayRef.current, { width: 0 });
     gsap.set(arrowRef.current, { y: 20, opacity: 0 });
 
     // Animation au hover
-    buttonRef.current?.addEventListener('mouseenter', () => {
+    button?.addEventListener('mouseenter', () => {
       gsap.to(overlayRef.current, { width: '100%', duration: 0.2, ease: 'power2.inOut' });
-      gsap.to(textRef.current, { color: 'var(--bg)', duration: 0.2 });
-      gsap.to(arrowRef.current, { y: 0, opacity: 1, duration: 0.2 });
+      gsap.to(textRef.current, { color: 'var(--bg)', duration: 0.1 });
+      gsap.to(arrowRef.current, { y: 0, opacity: 1, duration: 0.1 });
     });
 
     // Animation au hover out
-    buttonRef.current?.addEventListener('mouseleave', () => {
-      gsap.to(overlayRef.current, { width: 0, duration: 0.5, ease: 'power2.inOut' });
-      gsap.to(textRef.current, { color: 'var(--fg)', duration: 0.3 });
-      gsap.to(arrowRef.current, { y: 20, opacity: 0, duration: 0.3 });
+    button?.addEventListener('mouseleave', () => {
+      gsap.to(overlayRef.current, { width: 0, duration: 0.2, ease: 'power2.inOut' });
+      gsap.to(textRef.current, { color: 'var(--fg)', duration: 0.1 });
+      gsap.to(arrowRef.current, { y: 20, opacity: 0, duration: 0.1 });
     });
 
     return () => {
-      // Nettoyage des écouteurs d'événements
-      buttonRef.current?.removeEventListener('mouseenter', () => { });
-      buttonRef.current?.removeEventListener('mouseleave', () => { });
+      if (!button) return;
+      button.removeEventListener('mouseenter', () => {});
+      button.removeEventListener('mouseleave', () => {});
     };
   }, []);
 
@@ -43,7 +46,7 @@ export const Link = ({ href, text, onClick }: Props) => {
     <div ref={buttonRef} className="flex  cursor-pointer">
       <a
         href={href}
-        ref={buttonRef}
+        ref={anchorRef}
         onClick={(e) => {
           e.preventDefault();
           onClick?.();

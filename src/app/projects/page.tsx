@@ -1,5 +1,3 @@
-'use client';
-
 import { Navbar } from '../components/Navbar/Navbar';
 import { Transition } from '../components/Transition/Transition';
 

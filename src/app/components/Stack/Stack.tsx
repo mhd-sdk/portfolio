@@ -49,7 +49,7 @@ export const Stack: React.FC<FallingSpritesProps> = ({ backgroundColor = 'transp
     return () => {
       trigger.kill();
     };
-  }, []);
+  }, [backgroundColor]);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);

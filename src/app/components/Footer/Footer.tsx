@@ -1,8 +1,14 @@
+'use client';
+import { navigateWithDelay } from '@/app/utils/navigateWithDelay';
+import gsap from 'gsap';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 import { Link } from '../Link/Link';
-import { navigateWithDelay } from '@/app/utils/navigateWithDelay';
 
 export const Footer: React.FC = () => {
+  const pathname = usePathname();
+
+  const isActive = (to: string) => pathname === to;
   const handleNavigate = (to: string) => {
     if (isActive(to)) {
       return;
@@ -23,10 +29,10 @@ export const Footer: React.FC = () => {
   };
   return (
     <footer className="h-[20vh] p-8 w-full flex   justify-between bg-[var(--bg2)]">
-      <nav className="flex flex-col w-100 justify-start">
-        <Link text="Home" href="/" onClick={() => handleNavigate('/')} />
-        <Link text="Projects" href="/projects" onClick={() => handleNavigate('/projects')} />
-        <Link text="Contact" href="/contact" onClick={() => handleNavigate('/contact')} />
+      <nav className="flex flex-col justify-start">
+        {!isActive('/') && <Link text="Home" href="/" onClick={() => handleNavigate('/')} />}
+        {!isActive('/projects') && <Link text="Projects" href="/projects" onClick={() => handleNavigate('/projects')} />}
+        {!isActive('/contact') && <Link text="Contact" href="/contact" onClick={() => handleNavigate('/contact')} />}
       </nav>
       <p className="self-end text-center">© {new Date().getFullYear()} Mehdi Seddik. All rights reserved.</p>
     </footer>
