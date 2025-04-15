@@ -4,6 +4,8 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { JSX, useRef } from 'react';
 import SplitType from 'split-type';
+import caution from '../../../../public/caution.png';
+import Image from 'next/image';
 
 export const Landing = (): JSX.Element => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -35,7 +37,7 @@ export const Landing = (): JSX.Element => {
   }, []);
 
   return (
-    <section id="landing" ref={sectionRef} className="h-screen w-screen flex flex-col justify-center items-center">
+    <section id="landing" ref={sectionRef} className="h-50 w-screen flex flex-col justify-center items-center">
       <div className="overflow-hidden">
         <h2 className="landing-text">Mehdi Seddik</h2>
       </div>
@@ -43,6 +45,11 @@ export const Landing = (): JSX.Element => {
         <h1 id="typing-effect" className="landing-text font-bold text-8xl">
           SOFTWARE DEVELOPER
         </h1>
+      </div>
+      <div className="flex items-center justify-center gap-2 mt-5">
+        <Image alt="" height={40} src={caution} />
+        <p>Website under active development</p>
+        <Image alt="" height={40} src={caution} />
       </div>
     </section>
   );

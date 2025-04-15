@@ -20,8 +20,8 @@ export const About = (): JSX.Element => {
               About
             </h1>
             <p className="text-[1rem] leading-[1.6] mb-5">
-              Passionate about software development and computer science, I specialize in building reactive and high-performance applications.
-              <br /> I currently work as a Fullstack Developer at Fives CortX in France, where I contribute to the development of an innovative
+              Passionate about software development and computer science, I specialize in building reactive and complex applications.
+              <br /> I currently work as a Fullstack web developer at Fives CortX in France, where I contribute to the development of innovative
               software solutions for Industry 4.0. <br />
             </p>
             <p className="text-[1rem] leading-[1.6] mb-5">

@@ -3,20 +3,17 @@ import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import router from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { About } from './components/About/About';
 import Citation from './components/Citation/Citation';
 import { Landing } from './components/Landing/Landing';
 import { Navbar } from './components/Navbar/Navbar';
-import PreLaunch from './components/PreLaunch/PreLaunch';
 import { Stack } from './components/Stack/Stack';
 import { Transition } from './components/Transition/Transition';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-  const [isConfirmed, setIsConfirmed] = useState(false);
-
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1,
@@ -28,7 +25,7 @@ const Home = () => {
     }
 
     requestAnimationFrame(raf);
-  }, [isConfirmed]);
+  }, []);
 
   useEffect(() => {
     const handleRouteChange = () => {
@@ -43,18 +40,14 @@ const Home = () => {
 
   return (
     <>
-      {isConfirmed || process.env.DB_HOST !== 'dev' ? (
-        <div>
-          <Navbar />
-          <Landing />
-          <About />
-          <Citation />
-          <Stack />
-          <Transition />
-        </div>
-      ) : (
-        <PreLaunch onConfirm={() => setIsConfirmed(true)} />
-      )}
+      <div>
+        <Navbar />
+        <Landing />
+        <About />
+        <Citation />
+        <Stack />
+        <Transition />
+      </div>
     </>
   );
 };
