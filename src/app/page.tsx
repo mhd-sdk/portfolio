@@ -43,15 +43,15 @@ const Home = () => {
 
   return (
     <>
-      {isConfirmed ? (
-        <>
+      {isConfirmed || process.env.DB_HOST !== 'dev' ? (
+        <div>
           <Navbar />
           <Landing />
           <About />
           <Citation />
           <Stack />
           <Transition />
-        </>
+        </div>
       ) : (
         <PreLaunch onConfirm={() => setIsConfirmed(true)} />
       )}

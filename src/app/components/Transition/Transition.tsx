@@ -11,20 +11,19 @@ export const Transition = () => {
   const textRef = useRef<HTMLHeadingElement>(null);
   const cursorRef = useRef<HTMLSpanElement>(null);
 
-  const getTransitionTitle = () => {
-    switch (pathname) {
-      case '/':
-        return 'Home';
-      case '/projects':
-        return 'Projects';
-      case '/contact':
-        return 'Contact';
-      default:
-        return 'Home';
-    }
-  };
-
   useEffect(() => {
+    const getTransitionTitle = () => {
+      switch (pathname) {
+        case '/':
+          return 'Home';
+        case '/projects':
+          return 'Projects';
+        case '/blog':
+          return 'Blog';
+        default:
+          return 'Home';
+      }
+    };
     if (textRef.current && cursorRef.current) {
       const cursor = cursorRef.current;
       const text = textRef.current;
@@ -71,8 +70,7 @@ export const Transition = () => {
         display: 'none',
         duration: 0,
       });
-  }, [getTransitionTitle, pathname]);
-
+  }, [pathname]);
   return (
     <div className="privacy">
       <div className="panels-container">

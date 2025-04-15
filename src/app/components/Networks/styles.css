@@ -8,7 +8,4 @@
 .network-buttons {
   height: 50px;
   transition: font-size 0.5s;
-  &:hover {
-    font-size: 1.5em;
-  }
 }

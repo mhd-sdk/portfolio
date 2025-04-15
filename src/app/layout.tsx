@@ -20,7 +20,7 @@ export default function RootLayout({
         <title>Mehdi Seddik</title>
       </Head>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
       </body>
     </html>
   );

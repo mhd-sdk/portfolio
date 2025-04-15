@@ -1,13 +1,13 @@
 import gsap from 'gsap'; // Importation statique de GSAP
-import { useEffect, useRef } from 'react';
+import { AnchorHTMLAttributes, useEffect, useRef } from 'react';
 
-interface Props {
+interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href?: string;
   onClick?: () => void;
   text: string;
 }
 
-export const Link = ({ href, text, onClick }: Props) => {
+export const Link = ({ href, text, onClick, ...restProps }: Props) => {
   const buttonRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
@@ -37,8 +37,8 @@ export const Link = ({ href, text, onClick }: Props) => {
 
     return () => {
       if (!button) return;
-      button.removeEventListener('mouseenter', () => {});
-      button.removeEventListener('mouseleave', () => {});
+      button.removeEventListener('mouseenter', () => { });
+      button.removeEventListener('mouseleave', () => { });
     };
   }, []);
 
@@ -48,10 +48,13 @@ export const Link = ({ href, text, onClick }: Props) => {
         href={href}
         ref={anchorRef}
         onClick={(e) => {
-          e.preventDefault();
+          if (restProps.download === undefined) {
+            e.preventDefault();
+          }
           onClick?.();
         }}
         className="relative flex justify-center items-center px-4 py-2"
+        {...restProps}
       >
         <div ref={overlayRef} className="absolute inset-0 bg-current"></div>
         <span ref={textRef} className="relative z-10 flex items-center">

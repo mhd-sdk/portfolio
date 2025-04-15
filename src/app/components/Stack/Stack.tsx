@@ -122,9 +122,9 @@ export const Stack: React.FC<FallingSpritesProps> = ({ backgroundColor = 'transp
             Technologies
           </h1>
           <p className="text-[1.4rem] leading-[1.6]">
-            I use a variety of technologies, and I&apos;m always open to learn new ones.
+            I use a variety of technologies and i'm language agnostic so i&apos;m always open to learn new ones.
             <br />
-            At the moment, I&apos;m focusing on React, TypeScript, and Golang.
+            At the moment, I&apos;m having fun with Golang, TypeScript, and React.
           </p>
         </div>
       </section>

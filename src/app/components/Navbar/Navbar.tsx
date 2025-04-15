@@ -45,6 +45,7 @@ export const Navbar = (): JSX.Element => {
     });
   }, []);
   const { theme, setTheme } = useTheme();
+  console.log('theme', theme);
 
   return (
     <>
@@ -65,7 +66,7 @@ export const Navbar = (): JSX.Element => {
           <div className="h-4/5 !opacity-50 animate-nav">/</div>
           <NavLink isActive={isActive('/projects')} href="Projects" onNavigate={() => handleNavigate('/projects')} text="Projects" />
           <div className="h-4/5 !opacity-50 animate-nav">/</div>
-          <NavLink isActive={isActive('/contact')} href="Contact" onNavigate={() => handleNavigate('/contact')} text="Contact" />
+          <NavLink isActive={isActive('/blog')} href="Blog" onNavigate={() => handleNavigate('/blog')} text="Blog" />
         </ul>
       </nav>
     </>

@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { JSX } from 'react';
 import './styles.css';
+import { Link } from '../Link/Link';
 
 export const Networks = (): JSX.Element => {
   useGSAP(() => {
@@ -16,16 +17,16 @@ export const Networks = (): JSX.Element => {
     });
   }, []);
   return (
-    <div id="networks">
+    <div id="networks" className="networks flex items-center   items-baseline">
       <a className="network-buttons" href="https://www.linkedin.com/in/mehdi-seddik-841b341b9/" target="_blank" rel="noreferrer">
-        <FontAwesomeIcon icon={faLinkedinIn} />
-      </a>
-      <a className="network-buttons" href="https://www.instagram.com/bogoss.mhd_/" target="_blank" rel="noreferrer">
-        <FontAwesomeIcon icon={faInstagram} />
+        <FontAwesomeIcon size="xl" icon={faLinkedinIn} />
       </a>
       <a className="network-buttons" href="https://github.com/mhd-sdk" target="_blank" rel="noreferrer">
-        <FontAwesomeIcon icon={faGithub} />
+        <FontAwesomeIcon size="xl" icon={faGithub} />
       </a>
+      <div className="ml-auto">
+        <Link download="MehdiSeddikResume.pdf" href="/CV_En.pdf" target="_blank" rel="noopener noreferrer" text={'Download my resume'} />
+      </div>
     </div>
   );
 };

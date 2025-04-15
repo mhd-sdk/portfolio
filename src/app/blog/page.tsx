@@ -6,6 +6,7 @@ export default function Page() {
     <>
       <Navbar />
       <Transition />
+      Work in progress
     </>
   );
 }
