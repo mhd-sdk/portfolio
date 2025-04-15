@@ -1,10 +1,10 @@
-import { faGithub, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { JSX } from 'react';
-import './styles.css';
 import { Link } from '../Link/Link';
+import './styles.css';
 
 export const Networks = (): JSX.Element => {
   useGSAP(() => {

@@ -37,8 +37,8 @@ export const Link = ({ href, text, onClick, ...restProps }: Props) => {
 
     return () => {
       if (!button) return;
-      button.removeEventListener('mouseenter', () => { });
-      button.removeEventListener('mouseleave', () => { });
+      button.removeEventListener('mouseenter', () => {});
+      button.removeEventListener('mouseleave', () => {});
     };
   }, []);
 
