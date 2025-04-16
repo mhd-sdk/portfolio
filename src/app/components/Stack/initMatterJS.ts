@@ -1,6 +1,5 @@
 import Matter, { Composite, Mouse, MouseConstraint } from 'matter-js';
 import golang from '../../../../public/stack-icons/golang.png';
-import javascript from '../../../../public/stack-icons/javascript.png';
 import react from '../../../../public/stack-icons/react.png';
 import typescript from '../../../../public/stack-icons/typescript.png';
 

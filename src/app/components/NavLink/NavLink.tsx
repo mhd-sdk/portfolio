@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const NavLink = ({ href, onNavigate, text, isActive }: Props): JSX.Element => {
-  const linkRef = useRef<HTMLAnchorElement | null>(null); 
+  const linkRef = useRef<HTMLAnchorElement | null>(null);
 
   const handleNavigate = (to: string) => {
     if (window.location.pathname === to) {

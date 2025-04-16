@@ -6,7 +6,7 @@ import { Card, CardHeader } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 interface ResumeCardProps {
   logoUrl: string;
@@ -16,7 +16,7 @@ interface ResumeCardProps {
   href?: string;
   badges?: readonly string[];
   period: string;
-  description?: string;
+  description?: ReactNode;
 }
 export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, period, description }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
@@ -33,7 +33,7 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, href, badges, pe
       <Card className="flex">
         <div className="flex-none">
           <Avatar className="border size-12 m-auto">
-            <AvatarImage src={logoUrl} alt={altText} className="object-contain" />
+            <AvatarImage src={logoUrl} alt={altText} className="object-cover" />
             <AvatarFallback>{altText[0]}</AvatarFallback>
           </Avatar>
         </div>
