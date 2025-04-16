@@ -76,7 +76,7 @@ export const initMatterJS = ({ containerRef, sceneRef, engineRef, renderRef, run
 
   const y = Math.random() * -500 - 20;
   const sprites: Matter.Body[] = [
-    Matter.Bodies.rectangle(Math.floor(Math.random() * (width - 0.1 + 0.9)), y, 200, 200, {
+    Matter.Bodies.rectangle(0.25, y, 200, 200, {
       restitution: 0.3,
       friction: 0.5,
       render: {
@@ -87,18 +87,7 @@ export const initMatterJS = ({ containerRef, sceneRef, engineRef, renderRef, run
         },
       },
     }),
-    Matter.Bodies.rectangle(Math.floor(Math.random() * (width - 0.1 + 0.9)), y, 200, 200, {
-      restitution: 0.3,
-      friction: 0.5,
-      render: {
-        sprite: {
-          texture: javascript.src,
-          xScale: 0.4,
-          yScale: 0.4,
-        },
-      },
-    }),
-    Matter.Bodies.rectangle(Math.floor(Math.random() * (width - 0.1 + 0.9)), y, 295, 200, {
+    Matter.Bodies.rectangle(width * 0.5, y, 295, 200, {
       restitution: 0.3,
       friction: 0.5,
       render: {
@@ -109,7 +98,7 @@ export const initMatterJS = ({ containerRef, sceneRef, engineRef, renderRef, run
         },
       },
     }),
-    Matter.Bodies.circle(Math.floor(Math.random() * (width - 0 + 1)), y, 100, {
+    Matter.Bodies.circle(width * 0.75, y, 100, {
       restitution: 0.6,
       friction: 0.11,
       render: {
@@ -130,7 +119,7 @@ export const initMatterJS = ({ containerRef, sceneRef, engineRef, renderRef, run
     sprites.forEach((sprite) => {
       setTimeout(() => {
         Matter.World.add(engine.world, sprite);
-      }, Math.random() * 1000);
+      });
     });
   };
 
@@ -171,5 +160,5 @@ export const initMatterJS = ({ containerRef, sceneRef, engineRef, renderRef, run
 
     Matter.Composite.add(ceilingComposite, [visibleCeiling, collisionCeiling]);
     Matter.Composite.add(engine.world, ceilingComposite);
-  }, 4100);
+  }, 3500);
 };
