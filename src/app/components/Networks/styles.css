@@ -3,9 +3,14 @@
   gap: 15px;
   overflow: hidden;
   padding: 5px;
+  justify-content: center;
+  align-items: center;
 }
 
 .network-buttons {
   height: 50px;
   transition: font-size 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

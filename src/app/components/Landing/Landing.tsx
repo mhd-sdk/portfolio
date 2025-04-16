@@ -2,10 +2,10 @@
 
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import Image from 'next/image';
 import { JSX, useRef } from 'react';
 import SplitType from 'split-type';
 import caution from '../../../../public/caution.png';
-import Image from 'next/image';
 
 export const Landing = (): JSX.Element => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -43,7 +43,7 @@ export const Landing = (): JSX.Element => {
       </div>
       <div className="overflow-hidden">
         <h1 id="typing-effect" className="landing-text font-bold text-8xl">
-          SOFTWARE DEVELOPER
+          SOFTWARE ENGINEER
         </h1>
       </div>
       <div className="flex items-center justify-center gap-2 mt-5">

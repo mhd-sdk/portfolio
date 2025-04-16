@@ -10,6 +10,7 @@ import { Landing } from './components/Landing/Landing';
 import { Navbar } from './components/Navbar/Navbar';
 import { Stack } from './components/Stack/Stack';
 import { Transition } from './components/Transition/Transition';
+import { Experience } from './components/WorkExperience/WorkExperience';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,9 +45,10 @@ const Home = () => {
         <Navbar />
         <Landing />
         <About />
+        <Experience />
         <Citation />
         <Stack />
-        <Transition />
+        {process.env.NEXT_PUBLIC_ENV !== 'dev' && <Transition />}
       </div>
     </>
   );

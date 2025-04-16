@@ -17,7 +17,7 @@ export const Networks = (): JSX.Element => {
     });
   }, []);
   return (
-    <div id="networks" className="networks flex items-center   items-baseline">
+    <div id="networks" className="networks">
       <a className="network-buttons" href="https://www.linkedin.com/in/mehdi-seddik-841b341b9/" target="_blank" rel="noreferrer">
         <FontAwesomeIcon size="xl" icon={faLinkedinIn} />
       </a>

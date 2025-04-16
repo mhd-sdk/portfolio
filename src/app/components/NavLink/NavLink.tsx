@@ -9,8 +9,8 @@ interface Props {
 }
 
 export const NavLink = ({ href, onNavigate, text, isActive }: Props): JSX.Element => {
-  const linkRef = useRef<HTMLAnchorElement | null>(null); // Utilisation de useRef pour cibler le lien spécifique
-  // Fonction pour gérer la navigation
+  const linkRef = useRef<HTMLAnchorElement | null>(null); 
+
   const handleNavigate = (to: string) => {
     if (window.location.pathname === to) {
       return;

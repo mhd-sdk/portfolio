@@ -45,18 +45,17 @@ export const Navbar = (): JSX.Element => {
     });
   }, []);
   const { theme, setTheme } = useTheme();
-  console.log('theme', theme);
 
   return (
     <>
       <nav id="navbar" className="absolute top-0 left-1/2 -translate-x-1/2 flex  justify-center justify-between gap-4 p-4 w-[1000px]">
-        <div className="flex-1">
+        <div className="flex-1 overflow-hidden">
           {theme === 'dark' ? (
-            <button onClick={() => setTheme('light')}>
+            <button className="animate-nav" onClick={() => setTheme('light')}>
               <Sun width={25} height={25} fill="var(--fg)" />
             </button>
           ) : (
-            <button onClick={() => setTheme('dark')}>
+            <button className="animate-nav" onClick={() => setTheme('dark')}>
               <Moon width={25} height={25} fill="var(--fg)" />
             </button>
           )}
