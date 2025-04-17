@@ -4,7 +4,7 @@ import { workData } from './data';
 
 export const Experience = (): JSX.Element => {
   return (
-    <section className="py-20 px-36 w-full relative">
+    <section className="py-20 px-36 w-full h-[50vh] relative">
       <h1 id="about-title-header" className="text-3xl m-0 mb-10">
         Work experience
       </h1>

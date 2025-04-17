@@ -51,6 +51,7 @@ export const Landing = (): JSX.Element => {
         <p>Website under active development</p>
         <Image alt="" height={40} src={caution} />
       </div>
+      <div className="mt-10">↓ See more ↓</div>
     </section>
   );
 };
