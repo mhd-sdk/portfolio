@@ -5,7 +5,6 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import router from 'next/router';
 import { useEffect } from 'react';
 import { About } from './components/About/About';
-import Citation from './components/Citation/Citation';
 import { Landing } from './components/Landing/Landing';
 import { Navbar } from './components/Navbar/Navbar';
 import { Stack } from './components/Stack/Stack';
@@ -46,7 +45,6 @@ const Home = () => {
         <Landing />
         <About />
         <Experience />
-        <Citation />
         <Stack />
         {process.env.NEXT_PUBLIC_ENV !== 'dev' && <Transition />}
       </div>

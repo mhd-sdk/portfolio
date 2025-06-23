@@ -7,8 +7,10 @@ import { useTheme } from 'next-themes';
 import { usePathname } from 'next/navigation';
 import { JSX } from 'react';
 import { NavLink } from '../NavLink/NavLink';
+import { Moon } from '../Svg/Moon';
+import { Sun } from '../Svg/Sun';
 
-export const Navbar = (): JSX.Element => {
+export const OldNavbar = (): JSX.Element => {
   const pathname = usePathname();
 
   const isActive = (to: string) => pathname === to;
@@ -45,31 +47,27 @@ export const Navbar = (): JSX.Element => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="header z-10 px-10 mt-6 sticky top-0">
-      <nav id="navbar" className="py-1 px-4 bg-[var(--fg)] flex bg-fg justify-center justify-between gap-4 w-full sticky top-0">
+    <>
+      <nav id="navbar" className="absolute top-0 left-1/2 -translate-x-1/2 flex  justify-center justify-between gap-4 p-4 w-[1000px]">
         <div className="flex-1 overflow-hidden">
           {theme === 'dark' ? (
-            <button className="flex animate-nav text-[var(--bg)]" onClick={() => setTheme('light')}>
-              Light
+            <button className="animate-nav" onClick={() => setTheme('light')}>
+              <Sun width={25} height={25} fill="var(--fg)" />
             </button>
           ) : (
-            <button className="flex animate-nav text-[var(--bg)]" onClick={() => setTheme('dark')}>
-              Dark
+            <button className="animate-nav" onClick={() => setTheme('dark')}>
+              <Moon width={25} height={25} fill="var(--fg)" />
             </button>
           )}
         </div>
-        <ul id="navbar-list" className="flex gap-4 items-center overflow-hidden">
-          <NavLink invertColor={true} isActive={isActive('/')} href="Home" onNavigate={() => handleNavigate('/')} text="Home" />
-          <NavLink
-            invertColor={true}
-            isActive={isActive('/projects')}
-            href="Projects"
-            onNavigate={() => handleNavigate('/projects')}
-            text="Projects"
-          />
-          <NavLink invertColor={true} isActive={isActive('/blog')} href="Blog" onNavigate={() => handleNavigate('/blog')} text="Blog" />
+        <ul id="navbar-list" className="flex gap-2 items-center overflow-hidden">
+          <NavLink isActive={isActive('/')} href="Home" onNavigate={() => handleNavigate('/')} text="Home" />
+          <div className="h-4/5 !opacity-50 animate-nav">/</div>
+          <NavLink isActive={isActive('/projects')} href="Projects" onNavigate={() => handleNavigate('/projects')} text="Projects" />
+          <div className="h-4/5 !opacity-50 animate-nav">/</div>
+          <NavLink isActive={isActive('/blog')} href="Blog" onNavigate={() => handleNavigate('/blog')} text="Blog" />
         </ul>
       </nav>
-    </div>
+    </>
   );
 };

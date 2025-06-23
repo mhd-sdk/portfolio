@@ -1,15 +1,9 @@
 'use client';
 import { JSX, useEffect, useRef } from 'react';
 import './styles.css';
-interface Props {
-  href: string;
-  text: string;
-  isActive: boolean;
-  onNavigate: () => void;
-  invertColor?: boolean;
-}
+interface Props {}
 
-export const NavLink = ({ href, onNavigate, text, isActive, invertColor }: Props): JSX.Element => {
+export const ThemeSwitch = ({ href, onNavigate, text, isActive, invertColor }: Props): JSX.Element => {
   const linkRef = useRef<HTMLAnchorElement | null>(null);
 
   const handleNavigate = (to: string) => {
