@@ -5,9 +5,10 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import router from 'next/router';
 import { useEffect } from 'react';
 import { About } from './components/About/About';
+import { Footer } from './components/Footer';
 import { Landing } from './components/Landing/Landing';
 import { Navbar } from './components/Navbar/Navbar';
-import { Stack } from './components/Stack/Stack';
+import { Skills } from './components/Skills/Skills';
 import { Transition } from './components/Transition/Transition';
 import { Experience } from './components/WorkExperience/WorkExperience';
 
@@ -45,7 +46,8 @@ const Home = () => {
         <Landing />
         <About />
         <Experience />
-        <Stack />
+        <Skills />
+        <Footer />
         {process.env.NEXT_PUBLIC_ENV !== 'dev' && <Transition />}
       </div>
     </>

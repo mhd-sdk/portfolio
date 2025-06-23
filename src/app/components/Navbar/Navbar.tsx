@@ -39,13 +39,14 @@ export const Navbar = (): JSX.Element => {
       translateY: [100, 0],
       easing: 'easeOutExpo',
       duration: 2500,
+
       delay: 4700,
     });
   }, []);
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="header z-10 px-10 mt-6 sticky top-0">
+    <div className="header z-100 px-10 mt-6 sticky top-0">
       <nav id="navbar" className="py-1 px-4 bg-[var(--fg)] flex bg-fg justify-center justify-between gap-4 w-full sticky top-0">
         <div className="flex-1 overflow-hidden">
           {theme === 'dark' ? (

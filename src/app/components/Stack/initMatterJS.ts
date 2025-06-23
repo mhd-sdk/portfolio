@@ -75,36 +75,36 @@ export const initMatterJS = ({ containerRef, sceneRef, engineRef, renderRef, run
 
   const y = Math.random() * -500 - 20;
   const sprites: Matter.Body[] = [
-    Matter.Bodies.rectangle(0.25, y, 200, 200, {
+    Matter.Bodies.rectangle(0.25, y, 100, 100, {
       restitution: 0.3,
       friction: 0.5,
       render: {
         sprite: {
           texture: typescript.src,
-          xScale: 0.42,
-          yScale: 0.42,
+          xScale: 0.21,
+          yScale: 0.21,
         },
       },
     }),
-    Matter.Bodies.rectangle(width * 0.5, y, 295, 200, {
+    Matter.Bodies.rectangle(width * 0.5, y, 145, 100, {
       restitution: 0.3,
       friction: 0.5,
       render: {
         sprite: {
           texture: golang.src,
-          xScale: 0.29,
-          yScale: 0.29,
+          xScale: 0.14,
+          yScale: 0.14,
         },
       },
     }),
-    Matter.Bodies.circle(width * 0.75, y, 100, {
+    Matter.Bodies.circle(width * 0.75, y, 50, {
       restitution: 0.6,
       friction: 0.11,
       render: {
         sprite: {
           texture: react.src,
-          xScale: 0.053,
-          yScale: 0.053,
+          xScale: 0.026,
+          yScale: 0.026,
         },
       },
     }),

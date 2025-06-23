@@ -5,9 +5,9 @@ import { workData } from './data';
 
 export const Experience = (): JSX.Element => {
   return (
-    <section className="py-20 px-10 w-full h-[50vh] relative">
-      <SectionHeader title="Work experience | #002" url={'#eork'} />
-      <div className="flex mt-5 min-h-0 flex-col gap-y-3 w-full relative gap-18">
+    <section id="workxp" className="mt-20 px-10 w-full relative ">
+      <SectionHeader title="Work experience | #002" url="#workxp" />
+      <div className="flex min-h-0 flex-col w-full relative ">
         {workData.map((work) => (
           <ResumeCard
             key={work.company}

@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="h-[20vh] p-8 w-full flex   justify-between bg-[var(--bg2)]">
+    <footer className="h-[20vh] p-8 w-full flex  justify-between bg-[var(--fg)]">
       <nav className="flex flex-col justify-start">
         {!isActive('/') && <Link text="Home" href="/" onClick={() => handleNavigate('/')} />}
         {!isActive('/projects') && <Link text="Projects" href="/projects" onClick={() => handleNavigate('/projects')} />}
