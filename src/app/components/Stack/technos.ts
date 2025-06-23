@@ -5,7 +5,77 @@ export interface Techno {
 
 export type TechnoList = Techno[];
 
-export const tools: TechnoList = [
+export const webDev: TechnoList = [
+  {
+    name: 'Go',
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg',
+  },
+  {
+    name: 'JavaScript',
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+  },
+  {
+    name: 'TypeScript',
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+  },
+  {
+    name: 'React',
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+  },
+  // next
+  {
+    name: 'NextJS',
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+  },
+  {
+    name: 'NodeJS',
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+  },
+  {
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+    name: 'Git',
+  },
+  {
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
+    name: 'PHP',
+  },
+  {
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg',
+    name: 'Symfony',
+  },
+  {
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg',
+    name: 'C',
+  },
+  {
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+    name: 'MySQL',
+  },
+  {
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+    name: 'PostgreSQL',
+  },
+  {
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg',
+    name: 'GraphQL',
+  },
+  {
+    name: 'Python',
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+  },
+  {
+    name: 'Tailwind',
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
+  },
+  // chadcn and chakraui
+  {
+    name: 'ChakraUI',
+    url: 'https://img.icons8.com/?size=512&id=r9QJ0VFFrn7T&format=png',
+  },
+  {
+    name: 'Chadcn',
+    url: 'https://avatars.githubusercontent.com/u/139895814?s=200&v=4',
+  },
   {
     url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg',
     name: 'Bash',
@@ -68,77 +138,19 @@ export const tools: TechnoList = [
     name: 'Jest',
     url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg',
   },
+  // cucumber
+  {
+    name: 'Cucumber',
+    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cucumber/cucumber-plain.svg',
+  },
+  // mosquitto
+  {
+    name: 'Mosquitto',
+    url: 'https://raw.githubusercontent.com/docker-library/docs/757578e3a44e5460a8a11d32a81776f8b74231a9/eclipse-mosquitto/logo.png',
+  },
   // hyprland
   {
     name: 'Hyprland',
     url: 'https://code.hyprland.org/assets/img/logo.png',
-  },
-];
-
-export const webDev: TechnoList = [
-  {
-    name: 'Go',
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg',
-  },
-  {
-    name: 'JavaScript',
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  },
-  {
-    name: 'TypeScript',
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-  },
-  {
-    name: 'React',
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-  },
-  {
-    name: 'NodeJS',
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-  },
-  {
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-    name: 'Git',
-  },
-  {
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
-    name: 'PHP',
-  },
-  {
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg',
-    name: 'Symfony',
-  },
-  {
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg',
-    name: 'C',
-  },
-  {
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
-    name: 'MySQL',
-  },
-  {
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-    name: 'PostgreSQL',
-  },
-  {
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg',
-    name: 'GraphQL',
-  },
-  {
-    name: 'Python',
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-  },
-  {
-    name: 'Tailwind',
-    url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
-  },
-  // chadcn and chakraui
-  {
-    name: 'ChakraUI',
-    url: 'https://img.icons8.com/?size=512&id=r9QJ0VFFrn7T&format=png',
-  },
-  {
-    name: 'Chadcn',
-    url: 'https://avatars.githubusercontent.com/u/139895814?s=200&v=4',
   },
 ];
