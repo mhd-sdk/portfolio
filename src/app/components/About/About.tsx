@@ -12,12 +12,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const About = (): JSX.Element => {
   return (
-    <section id="about" className="w-full px-10 mt-10 text-justify">
+    <section id="about" className="w-full px-30 mt-10 text-justify">
       <SectionHeader title="About | #001" url={'#about'} />
       <div className="flex mt-5 text-[0.9rem] flex-row gap-8">
         <div className="flex  gap-3 z-5">
           <Image src={photo.src} alt="Me" className="object-cover" width={450} height={500} priority />
-          <div className="border-4 border-dashed px-2 py-1 border-[var(--fg)]">
+          <div className="border-4 border-dashed px-2 py-1 border-[var(--text)]">
             <Content />
           </div>
         </div>

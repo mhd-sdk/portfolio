@@ -6,7 +6,7 @@ export const DevIcons = ({ list }: Techno) => {
   return (
     <>
       {list.map((icon, index) => (
-        <div key={index} className="flex flex items-center mb-3 p-2 gap-2 mr-2 bg-[var(--bg2)] text-[var(--fg)]! ">
+        <div key={index} className="flex flex items-center p-2 gap-2 bg-[var(--bg2)] text-[var(--text)]! ">
           <img
             alt=""
             //   className={cx(

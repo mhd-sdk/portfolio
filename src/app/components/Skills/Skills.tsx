@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const Skills = (): JSX.Element => {
   return (
-    <section id="skills" className="w-full px-10 mb-20 mt-20 text-justify">
+    <section id="skills" className="w-full px-30 mb-20 mt-20 text-justify">
       <SectionHeader title="Skills | #003" url={'#skills'} />
       <p className="mt-3">
         From frontend to backend, I have a diverse skill set that allows me to tackle various challenges in web development. I&apos;m also willing to

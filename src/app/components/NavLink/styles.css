@@ -1,10 +1,10 @@
 @import "../../globals.css";
 
 .active-navlink {
-  color: var(--fg) !important;
+  color: var(--text) !important;
 }
 .inactive-navlink {
-  color: var(--fg) !important;
+  color: var(--text) !important;
   opacity: 0.5 !important;
 }
 

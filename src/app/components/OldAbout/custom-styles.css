@@ -10,12 +10,12 @@
   background: linear-gradient(
     135deg,
     var(--bg) 25%,
-    var(--fg-transparent) 25%,
-    var(--fg-transparent) 50%,
+    var(--text-transparent) 25%,
+    var(--text-transparent) 50%,
     var(--bg) 50%,
     var(--bg) 75%,
-    var(--fg-transparent) 75%,
-    var(--fg-transparent)
+    var(--text-transparent) 75%,
+    var(--text-transparent)
   );
   background-size: 40px 40px;
 

@@ -52,11 +52,11 @@ export const OldNavbar = (): JSX.Element => {
         <div className="flex-1 overflow-hidden">
           {theme === 'dark' ? (
             <button className="animate-nav" onClick={() => setTheme('light')}>
-              <Sun width={25} height={25} fill="var(--fg)" />
+              <Sun width={25} height={25} fill="var(--text)" />
             </button>
           ) : (
             <button className="animate-nav" onClick={() => setTheme('dark')}>
-              <Moon width={25} height={25} fill="var(--fg)" />
+              <Moon width={25} height={25} fill="var(--text)" />
             </button>
           )}
         </div>

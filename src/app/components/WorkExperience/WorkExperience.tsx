@@ -5,7 +5,7 @@ import { workData } from './data';
 
 export const Experience = (): JSX.Element => {
   return (
-    <section id="workxp" className="mt-20 px-10 w-full relative ">
+    <section id="workxp" className="mt-20 px-30 w-full relative ">
       <SectionHeader title="Work experience | #002" url="#workxp" />
       <div className="flex min-h-0 flex-col w-full relative ">
         {workData.map((work) => (

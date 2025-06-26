@@ -9,15 +9,14 @@
     Departure Mono,
     monospace;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
 
-  --fg: rgb(63, 62, 62);
-  --fg-transparent: rgba(63, 62, 62, 0.07);
+  --text: rgb(63, 62, 62);
+  --text-transparent: rgba(63, 62, 62, 0.07);
   --bg: #eeeeee;
-  --fg2: #ffffff;
+  --text2: #ffffff;
   --bg2: #cdcdcd;
-  color: var(--fg);
+  color: var(--text);
   --radius:
     0.625rem;
   --background:
@@ -88,16 +87,14 @@
   font-family:
     Departure Mono,
     monospace;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
 
-  --fg: rgb(238, 238, 238);
-  --fg-transparent: rgba(238, 238, 238, 0.05);
+  --text: #F7F7F7;
+  --text-transparent: rgba(238, 238, 238, 0.05);
   --bg: #18191a;
-  --fg2: #18191a;
+  --text2: #18191a;
   --bg2: #242526;
-  color: var(--fg);
+  color: var(--text);
 }
 
 a {
@@ -131,11 +128,9 @@ body {
 }
 
 body {
-  color: var(--fg);
+  color: var(--text);
   background: var(--bg);
   font-family: Departure, Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
@@ -162,28 +157,9 @@ h6 {
   font-size: 1rem; /* Augmentation de 1.25rem à 1.5rem */
 }
 
-/* set scrollbar style */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: var(--nord1);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--white);
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-}
-
 /* quand on selectionne du texte */
 /* ::selection {
-  background: var(--fg);
+  background: var(--text);
   color: var(--bg);
 } */
 

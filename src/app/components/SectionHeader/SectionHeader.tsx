@@ -8,11 +8,11 @@ interface Props {
 export const SectionHeader = ({ url, title }: Props): JSX.Element => {
   return (
     <h6>
-      <a href={url} className="py-1 px-4 bg-[var(--fg)] text-[var(--bg)]! flex bg-fg justify-between gap-4 w-full sticky top-0">
+      <a href={url} className="py-1 px-4 bg-[var(--text)] text-[var(--bg)]! flex bg-fg justify-between gap-4 w-full top-0">
         {title}
       </a>
 
-      <div className="h-1 mt-0.5 px-4 bg-[var(--fg)] text-[var(--bg)]! flex bg-fg justify-between gap-4 w-full sticky top-0" />
+      <div className="h-1 mt-0.5 px-4 bg-[var(--text)] text-[var(--bg)]! flex bg-fg justify-between gap-4 w-full top-0" />
     </h6>
   );
 };

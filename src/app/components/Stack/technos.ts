@@ -7,7 +7,7 @@ export type TechnoList = Techno[];
 
 export const webDev: TechnoList = [
   {
-    name: 'Go',
+    name: 'Golang',
     url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg',
   },
   {

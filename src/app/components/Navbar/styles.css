@@ -1,0 +1,26 @@
+@import "../../globals.css";
+
+.active-navlink {
+  color: var(--text) !important;
+}
+.inactive-navlink {
+  color: var(--text) !important;
+  opacity: 0.5 !important;
+}
+
+#privacy-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text);
+  z-index: 205; /* Make sure text is above all panels */
+  opacity: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.transition-span {
+  position: relative; /* Changed from absolute */
+  font-weight: bold;
+}
